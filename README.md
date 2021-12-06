@@ -1,2 +1,2 @@
 # C-App
-application to integrate CEFET-MG systems
+Aplicação para integrar os diversos sistemas usados pelos alunos do CEFET-MG.
