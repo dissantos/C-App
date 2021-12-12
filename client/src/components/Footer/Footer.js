@@ -11,7 +11,7 @@ const Footer = () => (
   <div className="Footer">
     <AppBar position="static">
           <Toolbar className="app-footer">
-            <bold>Produzido por Surto Coletivo na base do rivotril</bold>
+            Produzido por Surto Coletivo na base do rivotril
           </Toolbar>
         </AppBar>
   </div>
