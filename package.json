@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dissantos/C-App#readme",
   "dependencies": {
+    "@mui/icons-material": "^5.2.1",
     "express": "^4.17.1"
   }
 }
