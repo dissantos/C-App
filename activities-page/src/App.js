@@ -1,12 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import  Header  from './components/Header/Header';
-import  Footer  from './components/Footer/Footer';
+import Calendar from './components/Calendar'
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,7 +19,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <Footer></Footer>
     </div>
   );
 }
