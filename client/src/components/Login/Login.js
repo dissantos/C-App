@@ -9,6 +9,11 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import IconButton from '@mui/material/IconButton'
+import Dialog from '@mui/material/Dialog'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+import DialogActions from '@mui/material/DialogActions'
 
 
 import './Login.css';
@@ -21,6 +26,8 @@ const Login = () =>{
     weightRange: '',
     showPassword: false,
   });
+
+  const [open, setOpen] = React.useState(false);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -36,6 +43,14 @@ const Login = () =>{
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  const handleOpenDialogRecovery = () => {
+    setOpen(true);
+  }
+
+  const handleCloseDialogRecovery = () => {
+    setOpen(false);
+  }
   
   const inputPropsUser = {
     endAdornment: (
@@ -72,7 +87,21 @@ const Login = () =>{
         <div class='buttons'>
           <Button variant="contained">Ainda não possui uma conta? Cadastre-se aqui</Button>
         </div>
-          <Link underline="hover">Esqueci minha senha</Link>      
+        <Link underline="hover" onClick={handleOpenDialogRecovery}>Esqueci minha senha</Link>
+        
+        <Dialog open={open} onClose={handleCloseDialogRecovery}>
+          <DialogTitle>Recuperação de Senha</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Informe seu e-mail utilizado no cadastro e, caso conste nos sistemas, enviaremos uma mensagem com os próximo passo para redifinir a sua senha.
+            </DialogContentText>
+            <TextField id="user-input" type='email' label="E-mail" variant="outlined" fullWidth margin='normal'/>
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" onClick={handleCloseDialogRecovery}>Enviar</Button>
+          </DialogActions>
+        </Dialog>
+
     </div>
   );
 }
