@@ -5,9 +5,14 @@ import Calendar from '../components/Calendar'
 export default class ActivitiesPage extends Component {
     render() {
         return (
-        <div className='calendario-semanal'>
-            <Calendar />
-        </div>
+        <body>
+            <div className='page'>
+
+                <div className='calendar'>
+                    <Calendar />
+                </div>
+            </div>
+        </body>
         )
     }
 }

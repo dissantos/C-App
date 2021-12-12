@@ -1,7 +1,13 @@
-/*.page {
+.body {
+    display: flex;
+    grid-template-rows: auto 1fr auto;
+}
 
-}*/
+.page {
+    display: flex;
+    grid-template-columns: auto;
+}
 
-/*.calendario-semanal {
-
-}*/
+.calendar {
+    display: block;
+}
