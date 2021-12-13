@@ -1,17 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./Header.css";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Row from "react-bootstrap/Row";
 import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Button from "@material-ui/core/Button";
-import MenuItem from "@material-ui/core/MenuItem";
-
+import SvgIcon from "@material-ui/core/SvgIcon";
+import IconButton from "@material-ui/core/IconButton";
+import ReactLogo from "../../images/account_circle_black_24dp.svg";
 const Header = () => (
   <div className="Header">
     <AppBar position="static">
@@ -19,7 +15,9 @@ const Header = () => (
         <Container>
           <Navbar.Collapse id="navbar-nav" className="app-header">
             <Nav className="menu">
-              <Navbar.Brand href="#c-app">C-app</Navbar.Brand>
+              <Navbar.Brand href="#c-app" className="logo">
+                C-app
+              </Navbar.Brand>
               <Nav.Link className="menu-item" href="#home">
                 HOME
               </Nav.Link>
@@ -34,15 +32,13 @@ const Header = () => (
               </Nav.Link>
             </Nav>
 
-            <Nav className="menu">
-              <NavDropdown title="Nome do User" className="menu-user">
-                <NavDropdown.Item className="drop-item" href="#action/3.1">Profile</NavDropdown.Item>
-                <NavDropdown.Item className="drop-item"href="#action/3.2">
-                  Alterar Senha
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="drop-item" href="#action/3.3">Sair</NavDropdown.Item>
-              </NavDropdown>
+            <Nav >
+              Seu nome
+              <IconButton aria-label="Delete" className="menu-item">
+                <SvgIcon className="icon-img">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                </SvgIcon>
+              </IconButton>
             </Nav>
           </Navbar.Collapse>
         </Container>
