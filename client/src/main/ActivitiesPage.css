@@ -4,10 +4,12 @@
 }
 
 .page {
-    display: flex;
-    grid-template-columns: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
 }
 
-.calendar {
-    display: block;
+.week-calendar {
+    display: grid;
+    grid-column: 2;
 }
