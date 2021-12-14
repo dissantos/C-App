@@ -2,6 +2,7 @@ import React from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import lang from "@fullcalendar/core/locales/pt-br";
+import './Calendar.css'
 
 const titleFormat = {
   year: "numeric",

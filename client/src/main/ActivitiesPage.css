@@ -6,10 +6,20 @@
 .page {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
+}
+
+.header {
+    height: 100px;
+    grid-row: 1;
+}
+
+.footer {
+    height: 30px;
+    grid-row: 3;
 }
 
 .week-calendar {
+    padding: 10px;
     display: grid;
     grid-column: 2;
 }
