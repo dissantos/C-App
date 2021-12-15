@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
 import AppBar from "@material-ui/core/AppBar";
-import "./Footer.css";
 
 const Footer = () => (
   <AppBar position="static" className="app-footer">
