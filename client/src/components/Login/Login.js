@@ -1,3 +1,4 @@
+import './Login.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@mui/material/TextField';
@@ -16,7 +17,6 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
 
 
-import './Login.css';
 
 const Login = () =>{
   const [values, setValues] = React.useState({
@@ -81,10 +81,10 @@ const Login = () =>{
           <TextField id="user-input" label="Usuário" variant="outlined" InputProps={ inputPropsUser } margin='normal'/>
           <TextField id="password-input" type={values.showPassword ? 'text' : 'password'} value={values.password} onChange={handleChange('password')} label="Senha" InputProps={inputPropsPassword} variant="outlined" margin='normal'/>
         </Box>
-        <div class='buttons'>
+        <div className='buttons'>
           <Button variant="contained">Entrar</Button>
         </div>
-        <div class='buttons'>
+        <div className='buttons'>
           <Button variant="contained">Ainda não possui uma conta? Cadastre-se aqui</Button>
         </div>
         <Link underline="hover" onClick={handleOpenDialogRecovery}>Esqueci minha senha</Link>

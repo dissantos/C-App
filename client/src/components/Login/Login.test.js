@@ -1,15 +1,18 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Login from './Login';
+import React from 'react'
+import toJson from 'enzyme-to-json'
+import Login from './Login'
+import { mount } from 'enzyme'
+import { configure } from 'enzyme'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-describe('<Login />', () => {
-  let component;
+configure({ adapter: new Adapter() })
 
-  beforeEach(() => {
-    component = shallow(<Login />);
-  });
-
-  test('It should mount', () => {
-    expect(component.length).toBe(1);
-  });
-});
+it('should render Login page', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    
+    const app = mount( 
+        <Login/>,
+    )
+    expect(toJson(app)).toMatchSnapshot()
+    expect(spy).not.toHaveBeenCalled()
+})
