@@ -1,9 +1,17 @@
-.Footer {
-    border: 1px solid silver;
-    background-color: white;
+.app-footer {
+  background-color: white;
+  height: 20px;
+  font-size: x-small;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.app-footer{
-    background-color: white;
-    color: blue;
+.footer {
+  background-color: white;
+  color: #404e82;
+  margin: 0px;
+  height: 20px;
+  border-top: 1px solid #404e82;
+  box-shadow: 0px 0px 0px 1px rgba(172, 172, 172, 0.767);
 }

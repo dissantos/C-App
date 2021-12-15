@@ -1,20 +1,14 @@
-
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import "./Footer.css";
 
 const Footer = () => (
-  <div className="Footer">
-    <AppBar position="static">
-          <Toolbar className="app-footer">
-            Produzido por Surto Coletivo na base do rivotril
-          </Toolbar>
-        </AppBar>
-  </div>
+  <AppBar position="static" className="app-footer">
+    <p className="footer">
+      C-App | © Produzido por Surto Coletivo com auxílio de benzodiazepinas
+    </p>
+  </AppBar>
 );
 
 Footer.propTypes = {};
