@@ -7,12 +7,17 @@ h2.fc-toolbar-title {
   color: var(--main-color);
 }
 
-.fc table {
-  border-radius: 15px;
+.fc.table {
+  border-radius: 5px;
 }
 
-.fc-col-header-cell {
-  font-size: small;
+.fc-view-harness.fc-view-harness-active {
+  border-radius: 5px;
+}
+
+.fc-daygrid-day-frame {
+  height: 3px;
+  border-radius: 10px;
 }
 
 a.fc-col-header-cell-cushion {
