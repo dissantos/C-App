@@ -1,15 +1,18 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import SignUp from './SignUp';
+import React from 'react'
+import toJson from 'enzyme-to-json'
+import SignUp from './SignUp'
+import { mount } from 'enzyme'
+import { configure } from 'enzyme'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-describe('<SignUp />', () => {
-  let component;
+configure({ adapter: new Adapter() })
 
-  beforeEach(() => {
-    component = shallow(<SignUp />);
-  });
-
-  test('It should mount', () => {
-    expect(component.length).toBe(1);
-  });
-});
+it('should render Sign up page', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    
+    const app = mount( 
+        <SignUp/>,
+    )
+    expect(toJson(app)).toMatchSnapshot()
+    expect(spy).not.toHaveBeenCalled()
+})
