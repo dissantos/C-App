@@ -2,7 +2,8 @@
   color: black;
   width: 300px;
   text-align: center;
-  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .progresso {

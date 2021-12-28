@@ -82,3 +82,12 @@ a.fc-col-header-cell-cushion {
 .fc-today-button.fc-button.fc-button-primary {
   font-size: 0.6em;
 }
+
+.atividades{
+  color: black;
+}
+
+.fc.fc-media-screen.fc-direction-ltr.fc-theme-standard{
+  margin-right: auto;
+  margin-left: auto;
+}

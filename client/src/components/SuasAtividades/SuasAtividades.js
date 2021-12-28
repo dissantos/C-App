@@ -26,7 +26,7 @@ class SuasAtividades extends React.Component {
   render() {
     return (
       <>
-        <h4>Suas Atividades</h4>
+        <h4 className="atividades">Suas Atividades</h4>
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
