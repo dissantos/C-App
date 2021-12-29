@@ -29,11 +29,11 @@ const NewsCard = (props) => {
           </h3>
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <CardContent sx={{ flex: '1 0 auto', backgroundColor: '#5579B9', border: 'solid 1px black', color: 'white' }}>
+          <CardContent sx={{ flex: '1 0 auto', border: 'solid 1px black', color: 'white' }}>
             <Typography variant="h6" component="div">
               {category}
             </Typography>
-            <Typography  color="text.secondary" component="div" sx={{color: 'white'}}>
+            <Typography  color="text.secondary" component="div">
               {title}
             </Typography>
           </CardContent>
