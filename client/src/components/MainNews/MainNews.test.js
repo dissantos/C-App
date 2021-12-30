@@ -1,15 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import MainNews from './MainNews';
+import toJson from 'enzyme-to-json'
+import { mount } from 'enzyme'
+import { configure } from 'enzyme'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-describe('<MainNews />', () => {
-  let component;
+configure({ adapter: new Adapter() })
 
-  beforeEach(() => {
-    component = shallow(<MainNews />);
-  });
-
-  test('It should mount', () => {
-    expect(component.length).toBe(1);
-  });
-});
+it('should render Mains news page', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    
+    const app = mount( 
+        <MainNews/>,
+    )
+    expect(toJson(app)).toMatchSnapshot()
+    expect(spy).not.toHaveBeenCalled()
+})

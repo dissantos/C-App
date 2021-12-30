@@ -1,15 +1,24 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import NewsCard from './NewsCard';
+import toJson from 'enzyme-to-json'
+import { mount } from 'enzyme'
+import { configure } from 'enzyme'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-describe('<NewsCard />', () => {
-  let component;
+configure({ adapter: new Adapter() })
 
-  beforeEach(() => {
-    component = shallow(<NewsCard />);
-  });
-
-  test('It should mount', () => {
-    expect(component.length).toBe(1);
-  });
-});
+it('should render News card component', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    const props = {
+      category : "Graduação", 
+      title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
+      dateDay : "23",
+      dateMonth : "dez"
+    }
+    
+    const app = mount( 
+        <NewsCard {...props}/>,
+    )
+    expect(toJson(app)).toMatchSnapshot()
+    expect(spy).not.toHaveBeenCalled()
+})
