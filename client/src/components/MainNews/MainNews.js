@@ -12,43 +12,50 @@ const MainNews = () => {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
     {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
     {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
     {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
     {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
     {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
     {
       category : "Graduação", 
       title : "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
       dateDay : "23",
-      dateMonth : "dez"
+      dateMonth : "dez",
+      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
     },
   ];
 

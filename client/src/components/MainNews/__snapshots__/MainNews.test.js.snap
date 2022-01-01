@@ -153,6 +153,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
               <ForwardRef(Grid)
@@ -163,6 +164,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
               <ForwardRef(Grid)
@@ -173,6 +175,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
               <ForwardRef(Grid)
@@ -183,6 +186,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
               <ForwardRef(Grid)
@@ -193,6 +197,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
               <ForwardRef(Grid)
@@ -203,6 +208,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
               <ForwardRef(Grid)
@@ -213,6 +219,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 />
               </ForwardRef(Grid)>,
             ],
@@ -259,6 +266,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -287,6 +295,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={
@@ -1601,6 +1610,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -1629,6 +1639,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={
@@ -2943,6 +2954,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -2971,6 +2983,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={
@@ -4285,6 +4298,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -4313,6 +4327,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={
@@ -5627,6 +5642,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -5655,6 +5671,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={
@@ -6969,6 +6986,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -6997,6 +7015,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={
@@ -8311,6 +8330,7 @@ exports[`should render Mains news page 1`] = `
                     dateDay="23"
                     dateMonth="dez"
                     title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                    url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                   />,
                   "columnSpacing": 0,
                   "columns": 12,
@@ -8339,6 +8359,7 @@ exports[`should render Mains news page 1`] = `
                   dateDay="23"
                   dateMonth="dez"
                   title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+                  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"
                 >
                   <ForwardRef(Card)
                     sx={

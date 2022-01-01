@@ -9,7 +9,7 @@ import { CardActionArea } from '@mui/material';
 
 
 const NewsCard = (props) => {
-  const { category, title, dateDay, dateMonth } = props;
+  const { category, title, dateDay, dateMonth, url } = props;
 
   return (
     <Card sx={{ width: 400 }}>
