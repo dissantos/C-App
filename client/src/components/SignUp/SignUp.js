@@ -9,6 +9,8 @@ import IconButton from '@mui/material/IconButton'
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Button from '@mui/material/Button';
 import ImageUploading from 'react-images-uploading';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 import PropTypes from 'prop-types';
 import './SignUp.css';
 
@@ -105,12 +107,14 @@ const SignUp = () => {
               '& .MuiTextField-root': { width: '50ch' },
             }}
       >
-        <TextField id="user-input" label="Usuário" variant="outlined" InputProps={ inputPropsUser } margin='normal'/>
+        <TextField id="name-input" label="Nome completo" variant="outlined" margin='normal'/>
+        <TextField id="user-input" label="Nome Usuário" variant="outlined" InputProps={ inputPropsUser } margin='normal'/>
         <TextField id="email-input" label="E-mail" variant="outlined" InputProps={ inputPropsEmail } margin='normal' type='email'/>
         <TextField id="password-input" type={values.showPassword ? 'text' : 'password'} value={values.password} onChange={handleChange('password')} label="Senha" InputProps={inputPropsPassword} variant="outlined" margin='normal'/>
         <TextField error={values.isIncorrectPassword} id="confirmPassword-input" type={values.showConfirmPassword ? 'text' : 'password'}  onChange={handleChangeConfirmPassword('confirmPassword')} label="Confirmar Senha" InputProps={inputPropsConfirmPassword} variant="outlined" margin='normal' />
       </Box>
       <div>
+      <label>Imagem de perfil (opcional):</label>
       <ImageUploading value={images} onChange={onChange} dataURLKey="data_url">
         {({
           imageList,
