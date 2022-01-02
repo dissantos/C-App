@@ -31,6 +31,9 @@ function Header() {
                 <Nav.Link className="menu-item" href="#forum">
                   FÓRUM
                 </Nav.Link>
+                <Nav.Link className="menu-item" href="#buscar">
+                  BUSCAR
+                </Nav.Link>
               </Nav>
 
               <Nav className="menu-user">
