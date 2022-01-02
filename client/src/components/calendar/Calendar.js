@@ -6,7 +6,7 @@ import './Calendar.css'
 
 const titleFormat = {
   year: "numeric",
-  month: "short",
+  month: "2-digit",
   day: "numeric",
 };
 

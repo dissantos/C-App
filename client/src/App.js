@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-//import Calendar from './components/Calendar'
+import ActivitiesPage from './pages/ActivitiesPage'
 
 function App() {
   return (
