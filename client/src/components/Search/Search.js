@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Search.css';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import createTheme from '@material-ui/core/styles/createTheme';
+import { createTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Button from '@material-ui/core/Button';
