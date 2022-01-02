@@ -23,6 +23,8 @@ const theme = createTheme({
 
 const Search = () => {
 
+  const [viewResults, setViewResults] = React.useState(false);
+
   const inputSearchProps = {
     endAdornment: (
       <InputAdornment position="end">
@@ -31,32 +33,42 @@ const Search = () => {
     ),
   }
 
+/*  const onSearchUsers = () =>{
+    setViewResults(true);
+  }*/
+
   const results = [];
 
   return (
     <div className="Search">
       <Box sx={
-        {
-          backgroundColor: '#003869', 
-          margin: '5vh 40vh',
-          padding: '5vh 10vh'
+        { 
+          backgroundColor: '#003869',
+          margin: '0 40vh',
+          marginTop: '5vh',
+          padding: '5vh 10vh',
+          boxShadow: "3px 5px 15px 3px rgba(0,0,0,0.2)"
         }}>
-        <Typography variant="h5" color="white" sx={{padding: '20px'}}>Busque por perfis de usuários:</Typography>
-        <Box sx={{display: 'flex'}}>
-          <ThemeProvider theme={theme}>
-            <TextField
-              required
-              id="search-id"
-              label="Digite o nome ou nome do usuário a ser procurado"
-              variant="filled"
-              InputProps={inputSearchProps}
-              sx={{ borderRadius: '5px', backgroundColor: '#FFFFFF'}}
-              fullWidth
-            />
-            <Button variant="contained" color="primary" sx={{marginLeft: '15px'}}>Buscar</Button>
-          </ThemeProvider>
-        </Box>
+          <Typography variant="h5" color="white" sx={{padding: '20px'}}>Busque por perfis de usuários:</Typography>
+          <Box sx={{display: 'flex'}}>
+            <ThemeProvider theme={theme}>
+              <TextField
+                required
+                id="search-id"
+                label="Digite o nome ou nome do usuário a ser procurado"
+                variant="filled"
+                InputProps={inputSearchProps}
+                sx={{ borderRadius: '5px', backgroundColor: '#FFFFFF'}}
+                fullWidth
+              />
+              <Button variant="contained" color="primary" sx={{marginLeft: '15px'}} >Buscar</Button>
+            </ThemeProvider>
+          </Box>
       </Box>
+      {viewResults && <div className='search-results'>
+        {results.length === 0? 'Nenhum resultado encontrado': results.toString()}
+      </div>
+      }
     </div>
   );
 }
