@@ -1,0 +1,23 @@
+
+.nome-sala {
+    display: flex;
+    margin: 10px 25px 30px;    
+    font-size: 25px;
+    align-items: flex-start;
+}
+
+li {
+    color: aliceblue;
+    display: flex;
+    background-color: #5579B9;
+    list-style-type: none;
+    width: 200px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+.marcado {
+    background-color: #557ab95b;
+}
