@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.side { 
+  grid-column: 1;
+}
+
+.main {
+  grid-column: 2;
+  position: absolute;
+  border: 1px solid black;
+  justify-content: flex-end;
+}
+
+p.mensagem {
+  width: 60%;
+}
+
+p.usuario-logado {
+  text-align: right;
+  justify-content: space-between;
+  background-color: #5579b9;
+  border-radius: 20px;
+  padding: 15px;
+} 
+
+p.outros-usuarios {
+  background-color:  #557ab95b;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.footer {
+  text-align: center;
+}
