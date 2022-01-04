@@ -84,7 +84,7 @@ const Profile = () => {
       <h2>Profile</h2>
       <Box fluid sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid item xs={5}>
+          <Grid item xs={6}>
             <Box
               sx={{
                 "& > :not(style)": {
@@ -95,7 +95,7 @@ const Profile = () => {
               <UserIcon sx={{ fontSize: 150 }} />
             </Box>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={6}>
             <Box
               component="form"
               sx={{
@@ -114,68 +114,93 @@ const Profile = () => {
               />
               <TextField
                 id="outlined-read-only-input"
+                label="Nome completo"
+                defaultValue="Nome Sobrenome"
+                InputProps={{
+                  readOnly: true,
+                }}
+              />
+              <TextField
+                id="outlined-read-only-input"
                 label="Matrícula"
                 defaultValue="20181234567"
                 InputProps={{
                   readOnly: true,
                 }}
               />
-            </Box>
-            <Box>
-              <h5>Discussões</h5>
-              <List component="nav" aria-label="secondary mailbox folder">
-                <ListItemButton
-                  selected={selectedIndex === 2}
-                  onClick={(event) => handleListItemClick(event, 2)}
-                >
-                  <ListItemText primary="Tópico 1" />
-                </ListItemButton>
-                <ListItemButton
-                  selected={selectedIndex === 3}
-                  onClick={(event) => handleListItemClick(event, 3)}
-                >
-                  <ListItemText primary="Tópico 2" />
-                </ListItemButton>
-              </List>
-              <BootstrapDialog
-                onClose={handleClose}
-                aria-labelledby="customized-dialog-title"
-                open={open}
-              >
-                <BootstrapDialogTitle
-                  id="customized-dialog-title"
+              <TextField
+                id="outlined-read-only-input"
+                label="Curso"
+                defaultValue="Nome do curso"
+                InputProps={{
+                  readOnly: true,
+                }}
+              />
+              <TextField
+                id="outlined-read-only-input"
+                label="Ano de entrada"
+                defaultValue="Ano que iniciou o curso"
+                InputProps={{
+                  readOnly: true,
+                }}
+              />
+            
+                <h5>Discussões</h5>
+                <List component="nav" aria-label="secondary mailbox folder">
+                  <ListItemButton
+                    selected={selectedIndex === 2}
+                    onClick={(event) => handleListItemClick(event, 2)}
+                  >
+                    <ListItemText primary="Tópico 1" />
+                  </ListItemButton>
+                  <ListItemButton
+                    selected={selectedIndex === 3}
+                    onClick={(event) => handleListItemClick(event, 3)}
+                  >
+                    <ListItemText primary="Tópico 2" />
+                  </ListItemButton>
+                </List>
+                <BootstrapDialog
                   onClose={handleClose}
+                  aria-labelledby="customized-dialog-title"
+                  open={open}
                 >
-                  Modal title
-                </BootstrapDialogTitle>
-                <DialogContent dividers>
-                  <Typography gutterBottom>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo
-                    odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                    risus, porta ac consectetur ac, vestibulum at eros.
-                  </Typography>
-                  <Typography gutterBottom>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur et. Vivamus sagittis lacus vel augue laoreet
-                    rutrum faucibus dolor auctor.
-                  </Typography>
-                  <Typography gutterBottom>
-                    Aenean lacinia bibendum nulla sed consectetur. Praesent
-                    commodo cursus magna, vel scelerisque nisl consectetur et.
-                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor
-                    fringilla.
-                  </Typography>
-                </DialogContent>
-                <DialogActions>
-                  <Button autoFocus onClick={handleClose}>
-                    Fechar
-                  </Button>
-                </DialogActions>
-              </BootstrapDialog>
+                  <BootstrapDialogTitle
+                    id="customized-dialog-title"
+                    onClose={handleClose}
+                  >
+                    Modal title
+                  </BootstrapDialogTitle>
+                  <DialogContent dividers>
+                    <Typography gutterBottom>
+                      Cras mattis consectetur purus sit amet fermentum. Cras
+                      justo odio, dapibus ac facilisis in, egestas eget quam.
+                      Morbi leo risus, porta ac consectetur ac, vestibulum at
+                      eros.
+                    </Typography>
+                    <Typography gutterBottom>
+                      Praesent commodo cursus magna, vel scelerisque nisl
+                      consectetur et. Vivamus sagittis lacus vel augue laoreet
+                      rutrum faucibus dolor auctor.
+                    </Typography>
+                    <Typography gutterBottom>
+                      Aenean lacinia bibendum nulla sed consectetur. Praesent
+                      commodo cursus magna, vel scelerisque nisl consectetur et.
+                      Donec sed odio dui. Donec ullamcorper nulla non metus
+                      auctor fringilla.
+                    </Typography>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button autoFocus onClick={handleClose}>
+                      Fechar
+                    </Button>
+                  </DialogActions>
+                </BootstrapDialog>
 
-              <div className="buttons">
-                <Button variant="contained">Sair</Button>
-              </div>
+                <div className="buttons">
+                  <Button variant="contained">Sair</Button>
+                </div>
+              
             </Box>
           </Grid>
         </Grid>
