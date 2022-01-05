@@ -1,0 +1,12 @@
+.Search { 
+    display: block;
+}
+
+.search-results {
+    background-color: #FFF;
+    margin: 0 40vh;
+    margin-bottom: 5vh;
+    padding: 3vh 0;
+    box-shadow: 3px 5px 15px 3px rgba(0,0,0,0.2);
+}
+
