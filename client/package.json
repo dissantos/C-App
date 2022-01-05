@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^5.0.0-beta.5",
@@ -70,6 +71,17 @@
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     },
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|ts)$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.js$",
+      "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.ts$",
+      "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.tsx$"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.7"
   }
 }
