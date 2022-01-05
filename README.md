@@ -30,7 +30,7 @@
 <hr style="border:1px  solid blue"> </hr>
 
 <p align="center">
-  <img src="https://github.com/hobbitx/EngSoft_TP2/blob/main/src/imagens/logo_text.png" />
+  <img src="https://github.com/dissantos/C-App/blob/develop/img/C_App_logo_transparente.svg" width="400px"/>
 </p>
 
 
