@@ -1,0 +1,18 @@
+.NewsCard {
+    display: block;
+}
+
+.MuiCard-root {
+    margin: 20px;
+    max-height: 122px;
+    border-radius: 20px 4px 4px 20px !important;
+}
+
+.MuiCardContent-root {
+    background-color: #5579B9;
+    color: #FFFFFF;
+}
+
+h3 {
+    padding: 25px 25px;
+}
