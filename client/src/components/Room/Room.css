@@ -10,6 +10,10 @@ li {
   align-items: flex-start;
 }
 
+.salas {
+  margin-left: 20px;
+}
+
 .nome-sala {
   display: flex;
   margin: 10px 25px 30px;
@@ -19,4 +23,8 @@ li {
 
 .marcado {
   background-color: #557ab95b;
+}
+
+#buscar-sala{
+  margin: 0px 0px;
 }

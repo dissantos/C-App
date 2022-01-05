@@ -7,14 +7,14 @@ import "./ForumPage.css";
 
 const Forum = () => {
   return (
-    <div>
+    <body>
       <Header></Header>
       <div className="container">
         <Room className="side"></Room>
         <Messages className="main"></Messages>
       </div>
       <Footer className="footer"></Footer>
-    </div>
+    </body>
   );
 };
 
