@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render News page 1`] = `
+<News
+  category="Graduação"
+  title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas"
+  url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-em-automacao-e-sistemas/"
+>
+  <div
+    className="News"
+  >
+    <ForwardRef(Divider)
+      textAlign="left"
+    >
+      <MuiDividerRoot
+        as="div"
+        className="MuiDivider-root MuiDivider-fullWidth MuiDivider-withChildren MuiDivider-textAlignLeft"
+        ownerState={
+          Object {
+            "absolute": false,
+            "children": <ForwardRef(Typography)
+              sx={
+                Object {
+                  "color": "#5579b9",
+                  "padding": "20px",
+                }
+              }
+              variant="h4"
+            >
+              Graduação
+            </ForwardRef(Typography)>,
+            "component": "div",
+            "flexItem": false,
+            "light": false,
+            "orientation": "horizontal",
+            "role": "separator",
+            "textAlign": "left",
+            "variant": "fullWidth",
+          }
+        }
+        role="separator"
+      >
+        <Noop />
+        <div
+          className="MuiDivider-root MuiDivider-fullWidth MuiDivider-withChildren MuiDivider-textAlignLeft css-cppmpw-MuiDivider-root"
+          role="separator"
+        >
+          <MuiDividerWrapper
+            className="MuiDivider-wrapper"
+            ownerState={
+              Object {
+                "absolute": false,
+                "children": <ForwardRef(Typography)
+                  sx={
+                    Object {
+                      "color": "#5579b9",
+                      "padding": "20px",
+                    }
+                  }
+                  variant="h4"
+                >
+                  Graduação
+                </ForwardRef(Typography)>,
+                "component": "div",
+                "flexItem": false,
+                "light": false,
+                "orientation": "horizontal",
+                "role": "separator",
+                "textAlign": "left",
+                "variant": "fullWidth",
+              }
+            }
+          >
+            <Noop />
+            <span
+              className="MuiDivider-wrapper css-qywfm8-MuiDivider-wrapper"
+            >
+              <ForwardRef(Typography)
+                sx={
+                  Object {
+                    "color": "#5579b9",
+                    "padding": "20px",
+                  }
+                }
+                variant="h4"
+              >
+                <MuiTypographyRoot
+                  as="h4"
+                  className="MuiTypography-root MuiTypography-h4"
+                  ownerState={
+                    Object {
+                      "align": "inherit",
+                      "children": "Graduação",
+                      "className": undefined,
+                      "color": undefined,
+                      "component": undefined,
+                      "gutterBottom": false,
+                      "noWrap": false,
+                      "paragraph": false,
+                      "sx": Object {
+                        "color": "#5579b9",
+                        "padding": "20px",
+                      },
+                      "variant": "h4",
+                      "variantMapping": Object {
+                        "body1": "p",
+                        "body2": "p",
+                        "h1": "h1",
+                        "h2": "h2",
+                        "h3": "h3",
+                        "h4": "h4",
+                        "h5": "h5",
+                        "h6": "h6",
+                        "inherit": "p",
+                        "subtitle1": "h6",
+                        "subtitle2": "h6",
+                      },
+                    }
+                  }
+                  sx={
+                    Object {
+                      "color": "#5579b9",
+                      "padding": "20px",
+                    }
+                  }
+                >
+                  <Noop />
+                  <h4
+                    className="MuiTypography-root MuiTypography-h4 css-h2oc99-MuiTypography-root"
+                  >
+                    Graduação
+                  </h4>
+                </MuiTypographyRoot>
+              </ForwardRef(Typography)>
+            </span>
+          </MuiDividerWrapper>
+        </div>
+      </MuiDividerRoot>
+    </ForwardRef(Divider)>
+    <ForwardRef(Typography)
+      sx={
+        Object {
+          "color": "#5579b9",
+          "padding": "20px",
+        }
+      }
+      variant="h2"
+    >
+      <MuiTypographyRoot
+        as="h2"
+        className="MuiTypography-root MuiTypography-h2"
+        ownerState={
+          Object {
+            "align": "inherit",
+            "children": "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
+            "className": undefined,
+            "color": undefined,
+            "component": undefined,
+            "gutterBottom": false,
+            "noWrap": false,
+            "paragraph": false,
+            "sx": Object {
+              "color": "#5579b9",
+              "padding": "20px",
+            },
+            "variant": "h2",
+            "variantMapping": Object {
+              "body1": "p",
+              "body2": "p",
+              "h1": "h1",
+              "h2": "h2",
+              "h3": "h3",
+              "h4": "h4",
+              "h5": "h5",
+              "h6": "h6",
+              "inherit": "p",
+              "subtitle1": "h6",
+              "subtitle2": "h6",
+            },
+          }
+        }
+        sx={
+          Object {
+            "color": "#5579b9",
+            "padding": "20px",
+          }
+        }
+      >
+        <Noop />
+        <h2
+          className="MuiTypography-root MuiTypography-h2 css-gydxw7-MuiTypography-root"
+        >
+          Edital seleciona alunos especiais para Mestrado em Automação e Sistemas
+        </h2>
+      </MuiTypographyRoot>
+    </ForwardRef(Typography)>
+    
+    
+    <h3
+      key="1"
+    >
+      O content vai ser pego pelo crawler usando a url
+    </h3>
+    
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti cum praesentium vero incidunt quod non quae, laudantium fuga eos dignissimos eum aliquam, aspernatur fugiat ipsa quos quisquam deleniti velit maiores et, eligendi consectetur numquam. Repellat fugit dolor hic veritatis voluptatibus consequuntur praesentium consectetur, labore, nihil quae itaque! Eius eum, quasi odio voluptatem voluptatum nam similique aut explicabo! Tenetur provident, reiciendis quis saepe aut modi voluptatum, blanditiis dignissimos distinctio accusantium dolores.
+  
+  </div>
+</News>
+`;

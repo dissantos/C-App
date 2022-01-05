@@ -1,0 +1,93 @@
+:root {
+  --main-color: #404e82;
+  --today-color: rgba(64, 78, 130, 0.4);
+}
+
+.fc .fc-button-primary {
+  color: rgb(54, 51, 51);
+  background-color: white;
+  border-color: white;
+  display: none;
+}
+
+.fc .fc-button-primary:hover {
+  color: var(--main-color);
+  background-color: white;
+  border-color: white;
+}
+
+.fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
+  width: 300px;
+}
+
+.fc-scroller {
+  overflow-y: hidden !important;
+}
+
+.fc-today-button.fc-button.fc-button-primary {
+  visibility: hidden;
+}
+
+.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+  margin: 0px;
+}
+
+h2.fc-toolbar-title {
+  color: var(--main-color);
+  font-size: 0.9em;
+}
+
+#fc-dom-2 {
+  font-size: 0.9em;
+}
+
+#fc-dom-512 {
+  font-size: 0.9em;
+}
+
+.fc-toolbar {
+  text-transform: capitalize;
+}
+
+.fc.table {
+  border-radius: 5px;
+}
+
+.fc-view-harness.fc-view-harness-active {
+  border-radius: 5px;
+}
+
+.fc-daygrid-day-frame {
+  height: 3px;
+  border-radius: 10px;
+}
+
+a.fc-col-header-cell-cushion {
+  color: rgb(54, 51, 51);
+  font-size: 0.9em;
+}
+
+.fc-scrollgrid-section.fc-scrollgrid-section-header {
+  font-size: 0.6em;
+}
+
+.fc-scrollgrid-section.fc-scrollgrid-section-body.fc-scrollgrid-section-liquid {
+  font-size: 0.6em;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: var(--today-color);
+}
+
+.fc-today-button.fc-button.fc-button-primary {
+  font-size: 0.6em;
+}
+
+.atividades{
+  color: black;
+}
+
+.fc.fc-media-screen.fc-direction-ltr.fc-theme-standard{
+  margin-right: auto;
+  margin-left: auto;
+}
