@@ -1,0 +1,16 @@
+.Login {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.buttons {
+    margin: 8px;
+}
+
+h2 {
+    color: #5579B9;
+}
+

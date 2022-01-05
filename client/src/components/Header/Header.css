@@ -1,11 +1,11 @@
 .Header {
-  background-color: #404e82;
+  background-color: white;
 }
 
 .app-header {
   background-color: #404e82;
+  border-radius: 50px;
   list-style-type: none;
-  padding-left: 20px;
   display: flex;
   justify-content: space-between;
   padding: 10px 50px 0px 50px;
@@ -15,7 +15,7 @@
 .menu {
   display: block;
   text-align: center;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
   text-align: center;
   font-family: sans-serif;
   text-decoration: none;
@@ -33,13 +33,17 @@
   padding: 20px 50px 20px 50px;
   text-decoration: none;
 }
+
 .menu-user {
   text-align: right;
   color: white;
   margin-right: 20px;
+  margin-top: 0px;
+  padding: 0px;
 }
-.drop-item {
-  background-color: white;
+
+.name{
+  margin-right: 20px;
 }
 
 .logo {
@@ -51,5 +55,6 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  margin: 0px;
+  margin-top: 0px;
+  padding: 0px;
 }
