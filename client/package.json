@@ -5,8 +5,12 @@
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@fullcalendar/core": "^5.10.1",
+    "@fullcalendar/daygrid": "^5.10.1",
+    "@fullcalendar/react": "^5.10.1",
     "@material-ui/core": "^5.0.0-beta.5",
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.2.4",
@@ -70,6 +74,17 @@
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     },
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|ts)$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.js$",
+      "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.ts$",
+      "/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.tsx$"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.7"
   }
 }
