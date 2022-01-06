@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import IconButton from "@material-ui/core/IconButton";
 import { MdAccountCircle } from "react-icons/md";
+import { Link } from "react-router-dom"
 
 function Header() {
   return (
@@ -19,13 +20,13 @@ function Header() {
                 <Navbar.Brand href="#c-app" className="logo">
                   C-app
                 </Navbar.Brand>
-                <Nav.Link className="menu-item" href="#home">
+                <Nav.Link className="menu-item" href="/">
                   HOME
                 </Nav.Link>
-                <Nav.Link className="menu-item" href="#atividades">
+                <Nav.Link className="menu-item" href="/login">
                   ATIVIDADES
                 </Nav.Link>
-                <Nav.Link className="menu-item" href="#noticias">
+                <Nav.Link className="menu-item" href="/news">
                   NOTÍCIAS
                 </Nav.Link>
                 <Nav.Link className="menu-item" href="#forum">
