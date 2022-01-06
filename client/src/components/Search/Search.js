@@ -96,8 +96,8 @@ const handleSearchUsers = () =>{
           {results.map((result, id) => {
             return (
             <div>
-              <ListItemButton>
-                <ListItem alignItems='flex-start'>
+              <ListItemButton key={id+1} sx={{width: "auto"}} onClick={() => window.location.href = `/profile/${result.username}`}>
+                <ListItem alignItems='flex-start' key={id+1}>
                   <ListItemAvatar>
                     <Avatar src={result.avatar}/>
                   </ListItemAvatar>

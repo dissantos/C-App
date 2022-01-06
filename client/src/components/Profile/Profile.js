@@ -18,6 +18,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
+import {useParams} from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -57,8 +58,10 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-const Profile = () => {
+const Profile = (props) => {
   const [open, setOpen] = React.useState(false);
+  const params = window.location.href.split('/');
+  const user = params[params.length -1]
 
   const handleClose = () => {
     setOpen(false);
@@ -196,10 +199,11 @@ const Profile = () => {
                     </Button>
                   </DialogActions>
                 </BootstrapDialog>
-
-                <div className="buttons">
-                  <Button variant="contained">Sair</Button>
-                </div>
+                {user === 'profile' &&
+                  <div className="buttons">
+                    <Button variant="contained">Sair</Button>
+                  </div>
+                }
               
             </Box>
           </Grid>

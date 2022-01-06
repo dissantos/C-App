@@ -13,7 +13,7 @@ const NewsCard = (props) => {
 
   return (
     <Card sx={{ width: 400 }}>
-      <CardActionArea sx={{ display: 'flex' }}>
+      <CardActionArea sx={{ display: 'flex' }} onClick={() => window.location.href='/news'}>
         <Box
           component="div"
           sx={{ width: 100, height: 'max-content', borderRadius : '20px 0 0 20px', border: 'solid 1px black'}}

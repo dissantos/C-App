@@ -20,26 +20,26 @@ function Header() {
                 <Navbar.Brand href="#c-app" className="logo">
                   C-app
                 </Navbar.Brand>
-                <Nav.Link className="menu-item" href="/">
+                <Nav.Link className="menu-item" href="/principal">
                   HOME
                 </Nav.Link>
-                <Nav.Link className="menu-item" href="/login">
+                <Nav.Link className="menu-item" href="/activity">
                   ATIVIDADES
                 </Nav.Link>
-                <Nav.Link className="menu-item" href="/news">
+                <Nav.Link className="menu-item" href="/">
                   NOTÍCIAS
                 </Nav.Link>
-                <Nav.Link className="menu-item" href="#forum">
+                <Nav.Link className="menu-item" href="/forum">
                   FÓRUM
                 </Nav.Link>
-                <Nav.Link className="menu-item" href="#buscar">
+                <Nav.Link className="menu-item" href="/search">
                   BUSCAR
                 </Nav.Link>
               </Nav>
 
               <Nav className="menu-user">
                 <span className="name">Seu Nome</span>
-                <IconButton href="#profile">
+                <IconButton href="/profile">
                   <SvgIcon className="material-icons">
                     <MdAccountCircle />
                   </SvgIcon>

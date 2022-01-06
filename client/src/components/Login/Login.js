@@ -17,7 +17,6 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
 
 
-
 const Login = () =>{
   const [values, setValues] = React.useState({
     amount: '',
@@ -85,7 +84,7 @@ const Login = () =>{
           <Button variant="contained">Entrar</Button>
         </div>
         <div className='buttons'>
-          <Button variant="contained">Ainda não possui uma conta? Cadastre-se aqui</Button>
+          <Button variant="contained" onClick={() => window.location.href="/signup"}>Ainda não possui uma conta? Cadastre-se aqui</Button>
         </div>
         <Link underline="hover" onClick={handleOpenDialogRecovery}>Esqueci minha senha</Link>
         
