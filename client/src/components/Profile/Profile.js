@@ -74,6 +74,11 @@ const Profile = (props) => {
     setOpen(true);
   };
 
+  const handleLogout = () => {
+    window.localStorage.removeItem('@C-app/login');
+    window.location.href = '/';
+  }
+
   function UserIcon(props) {
     return (
       <SvgIcon {...props}>
@@ -201,7 +206,7 @@ const Profile = (props) => {
                 </BootstrapDialog>
                 {user === 'profile' &&
                   <div className="buttons">
-                    <Button variant="contained">Sair</Button>
+                    <Button variant="contained" onClick={handleLogout}>Sair</Button>
                   </div>
                 }
               

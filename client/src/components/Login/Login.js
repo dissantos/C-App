@@ -1,5 +1,5 @@
 import './Login.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -7,6 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Lock  from '@material-ui/icons/Lock';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import IconButton from '@mui/material/IconButton'
@@ -15,18 +16,21 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
+
+
 
 
 const Login = () =>{
   const [values, setValues] = React.useState({
-    amount: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   });
 
-  const [open, setOpen] = React.useState(false);
+  const [openDialogRecovery, setOpenDialogRecovery] = React.useState(false);
+  const [successAlert, setSuccessAlert] = React.useState(false);
+  const [errorAlert, setErrorAlert] = React.useState(false);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -43,12 +47,32 @@ const Login = () =>{
     event.preventDefault();
   };
 
-  const handleOpenDialogRecovery = () => {
-    setOpen(true);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const user = document.querySelector('#user-input').value;
+    const password = document.querySelector('#password-input').value;
+    if(user && password) {
+      //TO DO
+
+      setSuccessAlert(true);
+      window.localStorage.setItem('@C-app/login',user);
+      
+    } else {
+      setErrorAlert(true);
+    }
+    
   }
 
+  useEffect(() => {
+    if(successAlert) {
+      setTimeout(6500);
+      window.location.href = '/principal';
+    }
+  }, [successAlert]);
+
   const handleCloseDialogRecovery = () => {
-    setOpen(false);
+    //TODO
+    setOpenDialogRecovery(false);
   }
   
   const inputPropsUser = {
@@ -58,18 +82,33 @@ const Login = () =>{
       </InputAdornment>
     )
   };
+
   const inputPropsPassword = {
     endAdornment: (
       <InputAdornment position="end">
         <IconButton aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword} edge="end" >
-          {values.showPassword ? <VisibilityOff /> : <Visibility />}
+          {values.showPassword ? <VisibilityOff/> : <Visibility/>}
         </IconButton>
+        <Lock sx = {{paddingLeft: '20px'}}/>
       </InputAdornment>
     )
   };
 
   return  (
     <div className="Login">
+        {successAlert && 
+          <Snackbar open={successAlert} onClose={() => setSuccessAlert(false)}>
+            <Alert onClose={() => setSuccessAlert(false)} color="success" variant="filled" >
+              Login realizado com sucesso — redirecionando para página principal...
+            </Alert>
+          </Snackbar>
+        }
+        {errorAlert &&  
+          <Snackbar open={errorAlert} onClose={() => setErrorAlert(false)}>
+            <Alert onClose={() => setErrorAlert(false)} color="error" variant="filled" >
+              Erro no login — usuário e/ou senha inválido(s)
+            </Alert>
+          </Snackbar>}
         <h2>Login</h2>
         <Box sx={{
             display: 'flex',
@@ -81,14 +120,14 @@ const Login = () =>{
           <TextField id="password-input" type={values.showPassword ? 'text' : 'password'} value={values.password} onChange={handleChange('password')} label="Senha" InputProps={inputPropsPassword} variant="outlined" margin='normal'/>
         </Box>
         <div className='buttons'>
-          <Button variant="contained">Entrar</Button>
+          <Button variant="contained" onClick={handleLogin}>Entrar</Button>
         </div>
         <div className='buttons'>
           <Button variant="contained" onClick={() => window.location.href="/signup"}>Ainda não possui uma conta? Cadastre-se aqui</Button>
         </div>
-        <Link underline="hover" onClick={handleOpenDialogRecovery}>Esqueci minha senha</Link>
+        <Link underline="hover" onClick={() => setOpenDialogRecovery(true)}>Esqueci minha senha</Link>
         
-        <Dialog open={open} onClose={handleCloseDialogRecovery}>
+        <Dialog open={openDialogRecovery} onClose={() => setOpenDialogRecovery(false)}>
           <DialogTitle>Recuperação de Senha</DialogTitle>
           <DialogContent>
             <DialogContentText>

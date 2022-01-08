@@ -20,12 +20,18 @@ function Header() {
                 <Navbar.Brand href="#c-app" className="logo">
                   C-app
                 </Navbar.Brand>
-                <Nav.Link className="menu-item" href="/principal">
-                  HOME
-                </Nav.Link>
-                <Nav.Link className="menu-item" href="/activity">
-                  ATIVIDADES
-                </Nav.Link>
+                {
+                  window.localStorage.getItem('@C-app/login') &&
+                  (<Nav.Link className="menu-item" href="/principal">
+                    HOME
+                    </Nav.Link>)
+                }
+                {
+                  window.localStorage.getItem('@C-app/login') &&
+                  (<Nav.Link className="menu-item" href="/activity">
+                    ATIVIDADES
+                    </Nav.Link>)
+                }                
                 <Nav.Link className="menu-item" href="/">
                   NOTÍCIAS
                 </Nav.Link>
@@ -38,12 +44,25 @@ function Header() {
               </Nav>
 
               <Nav className="menu-user">
-                <span className="name">Seu Nome</span>
-                <IconButton href="/profile">
-                  <SvgIcon className="material-icons">
-                    <MdAccountCircle />
-                  </SvgIcon>
-                </IconButton>
+                {
+                  window.localStorage.getItem('@C-app/login') ?
+                    (
+                      <>
+                        <span className="name">Seu Nome</span>
+                        <IconButton href="/profile">
+                          <SvgIcon className="material-icons">
+                            <MdAccountCircle />
+                          </SvgIcon>
+                        </IconButton>
+                      </>
+                    )
+                  :
+                    (
+                      <Nav.Link href="/login">
+                        LOGIN
+                      </Nav.Link>
+                    )
+                }
               </Nav>
             </Navbar.Collapse>
           </Container>
