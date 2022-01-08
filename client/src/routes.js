@@ -11,6 +11,14 @@ import Profile from "./components/Profile/Profile";
 import Search from './components/Search/Search';
 
 const Router = () => {
+
+  const accessDenied = (
+    <>
+      <h1>Sem permissão de acesso</h1>
+      <h2>Realize o Login primeiro</h2>
+    </>
+  )
+
   return(
     <BrowserRouter>
       <Routes>
@@ -20,10 +28,10 @@ const Router = () => {
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/search" element={<Search/>}/>
         <Route path="/forum" element={<h1>Em construção</h1>}/>
-        <Route path="/activity" element={<SuasAtividades/>}/>
-        <Route path="/profile" element={<Profile user={null}/>}/>
+        <Route path="/activity" element={localStorage.getItem('@C-app/login') ? <SuasAtividades/> : accessDenied}/>
+        <Route path="/profile" element={localStorage.getItem('@C-app/login') ? <Profile user={null}/> : accessDenied}/>
         <Route path="/profile/:user" element={<Profile/>}/>
-        <Route path="/principal" element={<Home/>}/>
+        <Route path="/principal" element={localStorage.getItem('@C-app/login') ? <Home/> : accessDenied}/>
       </Routes>
     </BrowserRouter>
   )
