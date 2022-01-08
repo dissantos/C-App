@@ -1,32 +1,40 @@
-.body {
-  display: flex;
-  grid-template-rows: auto 1fr auto;
+:root {
+  --font: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --main-color: #404e82;
+  --events-color: #5579B9;
 }
 
 .page {
-  display: grid;
+  display: flex;
   grid-template-columns: auto 1fr;
+  height: 800px;
+  margin: 60px auto;
+  justify-content: space-around;
 }
 
-.header {
-  height: 100px;
-  grid-row: 1;
+.month-calendar {
+  width: 25%;
+  grid-column: 1;
 }
 
-.footer {
-  height: 30px;
-  grid-row: 3;
+.events {
+  margin-top: 40px;
+  display: block;
+  border-radius: 15px;
+  background-color: var(--events-color);
+  color: white;
+  padding: 10px;
 }
 
 .week-calendar {
   width: 600px;
-  padding: 10px;
   grid-column: 2;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.month-calendar {
-  height: 200px;
-  grid-column: 1;
+.week-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0px 10px 20px;
+  font-family: var(--font);
+  color: var(--main-color);
 }

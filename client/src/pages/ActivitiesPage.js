@@ -2,28 +2,27 @@ import React, { Component } from "react";
 import "./ActivitiesPage.css";
 import Calendar from "../components/calendar/Calendar";
 import MonthCalendar from "../components/calendar/MonthCalendar";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
 
-export default class ActivitiesPage extends Component {
-  render() {
-    return (
-      <body>
-        <div className="header">
-          <Header />
-        </div>
-        <div className="page">
-          <div className="month-calendar">
-            <MonthCalendar />
-          </div>
-          <div className="week-calendar">
-            <Calendar />
-          </div>
-        </div>
-        <div>
-          <Footer />
-        </div>
-      </body>
-    );
-  }
+function ActivitiesPage() {
+  return (
+    <div className="page">
+      <div className="month-calendar">
+        <MonthCalendar />
+        <span className="events">
+          <p className="event-title">Sistemas Distribuidos</p>
+          <p className="event-content">Novo vídeo cadastrado - dd/mm/aa</p>
+          <p className="event-title">Web</p>
+          <p className="event-content">Nova tarefa cadastrada - dd/mm/aa</p>
+          <p className="event-title">Inteligência Computacional</p>
+          <p className="event-content">Novo questionario  - dd/mm/aa</p>
+        </span>
+      </div>
+      <div className="week-calendar">
+        <p className="week-title">Atividades da Semana</p>
+        <Calendar />
+      </div>
+    </div>
+  );
 }
+
+export default ActivitiesPage;

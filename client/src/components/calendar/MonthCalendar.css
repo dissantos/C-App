@@ -1,10 +1,18 @@
 :root {
   --main-color: #404e82;
-  --today-color: rgba(64, 78, 130, 0.4);
+  --today-color: rgba(85, 121, 185, 0.4);
 }
 
 h2.fc-toolbar-title {
   color: var(--main-color);
+}
+
+.fc .fc-prev-button {
+outline: none;
+}
+
+.fc .fc-next-button {
+  outline: none;
 }
 
 .fc.table {
@@ -17,20 +25,21 @@ h2.fc-toolbar-title {
 
 .fc-daygrid-day-frame {
   height: 3px;
-  border-radius: 10px;
 }
 
 a.fc-col-header-cell-cushion {
   color: var(--main-color);
 }
 
-.fc .fc-prev-button {
-  outline: none;
-}
-.fc .fc-next-button {
-  outline: none;
+.fc-daygrid-day.fc-day-today {
+  background-color: var(--today-color);
 }
 
-.fc .fc-daygrid-day.fc-day-today {
-  background-color: var(--today-color);
+.fc-scroller {
+  overflow-y: hidden !important;
+}
+
+.fc-daygrid-day-top {
+  flex-direction: column;
+  text-align: center;
 }

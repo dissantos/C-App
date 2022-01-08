@@ -19,6 +19,7 @@ export default class Calendar extends React.Component {
   render() {
     return (
       <FullCalendar
+        height={'35%'}
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         locales={[lang]}
