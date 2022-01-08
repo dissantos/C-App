@@ -1,7 +1,8 @@
 :root {
-  --font: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   --main-color: #404e82;
-  --events-color: #5579B9;
+  --events-color: #5579b9;
 }
 
 .page {
@@ -24,6 +25,17 @@
   background-color: var(--events-color);
   color: white;
   padding: 10px;
+}
+
+.event-title {
+  text-align: left;
+  padding-left: 5%;
+  font-weight: bold;
+}
+
+.event-content {
+  text-align: left;
+  padding-left: 10%;
 }
 
 .week-calendar {
