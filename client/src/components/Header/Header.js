@@ -58,7 +58,7 @@ function Header() {
                     )
                   :
                     (
-                      <Nav.Link href="/login">
+                      <Nav.Link href="/login" className="menu-item menu-item-login">
                         LOGIN
                       </Nav.Link>
                     )

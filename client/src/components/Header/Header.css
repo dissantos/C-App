@@ -8,14 +8,14 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  padding: 10px 50px 0px 50px;
+  padding: 10px 50px 10px 50px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
 .menu {
   display: block;
   text-align: center;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 0px 10px;
   text-align: center;
   font-family: sans-serif;
   text-decoration: none;
@@ -34,12 +34,20 @@
   text-decoration: none;
 }
 
+
 .menu-user {
   text-align: right;
   color: white;
   margin-right: 20px;
   margin-top: 0px;
   padding: 0px;
+}
+
+.menu-item-login {
+  text-align: center;
+  padding-bottom: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .name{
