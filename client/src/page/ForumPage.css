@@ -1,50 +1,36 @@
-body::-webkit-scrollbar {
-  width: 12px;  
-}
-
-body::-webkit-scrollbar-track {
-  background: white;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgb(173, 173, 173);
-  border-radius: 5px;
-}
-
-.container {
-  display: flex;
-  columns: 2;
-  column-gap: 100px;
-}
-
-.side { 
-  grid-column: 1;
-}
-
 .main {
-  grid-column: 2;
-  border: 1px solid black;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  margin: 30px 30px;
+  column-gap: 8em;
+  height: 100vh;
+  overflow: hidden;
 }
 
-p.mensagem {
-  width: 50%;
+.col-1 {
+  width: 30%;
+  float: left;
+}
+
+.col-2 {
+  width: 95%;
+  padding: 15px 40px;
+  border: 1px solid #57575798;
+  border-radius: 10px;
+  float: left;
+}
+
+p.message {
+  width: 70%;
   border-radius: 20px;
   padding: 15px;
-}
-
-p.usuario-logado {
-  margin-left: 80px;
-  text-align: right;
-  justify-content: space-between;
-  background-color: #5579b9;
-
-} 
-
-p.outros-usuarios {
   background-color:  #557ab95b;
 }
 
-.footer {
-  text-align: center;
-}
+p.logged {
+  margin-left: 25%;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #5579b9;
+} 

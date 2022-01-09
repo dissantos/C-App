@@ -1,20 +1,14 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import Room from "../components/Room/Room";
 import Messages from "../components/Messages/Messages";
 import "./ForumPage.css";
 
 const Forum = () => {
   return (
-    <body>
-      <Header></Header>
-      <div className="container">
-        <Room className="side"></Room>
-        <Messages className="main"></Messages>
+      <div className="main">
+        <div className="col-1"><Room/></div>
+        <div className="col-2"><Messages/></div>
       </div>
-      <Footer className="footer"></Footer>
-    </body>
   );
 };
 

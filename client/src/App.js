@@ -1,11 +1,14 @@
-// import logo from "./logo.svg";
 import "./App.css";
 import ForumPage from "./page/ForumPage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <ForumPage></ForumPage>
+    <div className="app">
+      <header><Header/></header>
+      <main><ForumPage/></main>
+      <footer><Footer/></footer>
     </div>
   );
 }
