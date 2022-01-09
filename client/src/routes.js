@@ -9,6 +9,8 @@ import SignUp from './components/SignUp/SignUp'
 import SuasAtividades from "./components/SuasAtividades/SuasAtividades";
 import Profile from "./components/Profile/Profile";
 import Search from './components/Search/Search';
+import Button from "@mui/material/Button";
+
 
 const Router = () => {
 
@@ -19,13 +21,20 @@ const Router = () => {
     </>
   )
 
+  const userLogged = (
+    <div>
+      <h1>Você já está logado</h1>
+      <Button variant="outlined" onClick={() => window.location.href = "/principal"}>Voltar para página principal</Button>
+    </div>
+  )
+
   return(
     <BrowserRouter>
       <Routes>
         <Route path="/" exact={true}  element={<MainNews/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/login" element={localStorage.getItem('@C-app/login') ? userLogged : <Login/>}/>
         <Route path="/news" element={<News category="Graduação" title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas" url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/signup" element={localStorage.getItem('@C-app/login') ? userLogged : <SignUp/>}/>
         <Route path="/search" element={<Search/>}/>
         <Route path="/forum" element={<h1>Em construção</h1>}/>
         <Route path="/activity" element={localStorage.getItem('@C-app/login') ? <SuasAtividades/> : accessDenied}/>

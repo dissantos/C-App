@@ -108,7 +108,8 @@ const Login = () =>{
             <Alert onClose={() => setErrorAlert(false)} color="error" variant="filled" >
               Erro no login — usuário e/ou senha inválido(s)
             </Alert>
-          </Snackbar>}
+          </Snackbar>
+        }
         <h2>Login</h2>
         <Box sx={{
             display: 'flex',
