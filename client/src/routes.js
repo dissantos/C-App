@@ -10,6 +10,7 @@ import SuasAtividades from "./components/SuasAtividades/SuasAtividades";
 import Profile from "./components/Profile/Profile";
 import Search from './components/Search/Search';
 import Button from "@mui/material/Button";
+import Forum from "./components/Forum/ForumPage";
 
 
 const Router = () => {
@@ -36,7 +37,7 @@ const Router = () => {
         <Route path="/news" element={<News category="Graduação" title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas" url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"/>}/>
         <Route path="/signup" element={localStorage.getItem('@C-app/login') ? userLogged : <SignUp/>}/>
         <Route path="/search" element={<Search/>}/>
-        <Route path="/forum" element={<h1>Em construção</h1>}/>
+        <Route path="/forum" element={<Forum/>}/>
         <Route path="/activity" element={localStorage.getItem('@C-app/login') ? <SuasAtividades/> : accessDenied}/>
         <Route path="/profile" element={localStorage.getItem('@C-app/login') ? <Profile user={null}/> : accessDenied}/>
         <Route path="/profile/:user" element={<Profile/>}/>
