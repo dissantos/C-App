@@ -5,6 +5,8 @@
   column-gap: 8em;
   height: 100vh;
   overflow: hidden;
+  border: 1px solid #57575741;
+  border-radius: 10px;
 }
 
 .col-1 {
@@ -13,15 +15,18 @@
 }
 
 .col-2 {
-  width: 95%;
+  width: 100%;
   padding: 15px 40px;
-  border: 1px solid #57575798;
-  border-radius: 10px;
   float: left;
+  box-shadow: 0 2px 23px 0 rgba(0, 0, 0, 0.1), 0 2px 49px 0 rgba(0, 0, 0, 0.06);
+}
+
+p {
+  width: 30vw;
 }
 
 p.message {
-  width: 70%;
+  width: 75%;
   border-radius: 20px;
   padding: 15px;
   background-color:  #557ab95b;
@@ -33,4 +38,12 @@ p.logged {
   justify-content: flex-end;
   align-items: flex-end;
   background-color: #5579b9;
+  color: #F5F5F5;
+  font-weight: 400;
 } 
+
+.send-message {
+  position: absolute;
+  bottom: -5%;
+  width: 63%;
+}
