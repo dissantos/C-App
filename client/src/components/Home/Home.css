@@ -27,3 +27,38 @@
     text-align: center;
     height: 500px;
 }
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-14cyfy1-MuiPaper-root-MuiCard-root{
+  margin: 10px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+.MuiBox-root.css-8xz80m{
+  height: 80px;
+}
+
+.MuiButtonBase-root.MuiCardActionArea-root.css-ubkqll-MuiButtonBase-root-MuiCardActionArea-root{
+  height: 80px;
+}
+
+.MuiCardContent-root.css-cqe0yk-MuiCardContent-root{
+  height: 80px;
+  padding: 5px;
+}
+
+.MuiBox-root.css-j7qwjs{
+  height: 80px;
+}
+
+.MuiTypography-root.MuiTypography-h6.css-2ulfj5-MuiTypography-root{
+  font-size: small;
+}
+
+.MuiTypography-root.MuiTypography-body1.css-1pnmrwp-MuiTypography-root{
+  font-size: smaller;
+}
+
+h4{
+  color: black;
+}
