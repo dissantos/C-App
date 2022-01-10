@@ -1,0 +1,24 @@
+li {
+  color: aliceblue;
+  display: flex;
+  background-color: #5579b9;
+  list-style-type: none;
+  width: 300px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  align-items: flex-start;
+}
+
+.salas {
+  margin-left: 20px;
+}
+
+.nome-sala {
+  margin: 10px 25px 30px;
+  font-size: 25px;
+}
+
+.marcado {
+  background-color: #557ab95b;
+}
