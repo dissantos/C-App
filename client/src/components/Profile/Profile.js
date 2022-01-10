@@ -18,7 +18,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -60,8 +60,8 @@ BootstrapDialogTitle.propTypes = {
 
 const Profile = (props) => {
   const [open, setOpen] = React.useState(false);
-  const params = window.location.href.split('/');
-  const user = params[params.length -1]
+  const params = window.location.href.split("/");
+  const user = params[params.length - 1];
 
   const handleClose = () => {
     setOpen(false);
@@ -75,9 +75,9 @@ const Profile = (props) => {
   };
 
   const handleLogout = () => {
-    window.localStorage.removeItem('@C-app/login');
-    window.location.href = '/';
-  }
+    window.localStorage.removeItem("@C-app/login");
+    window.location.href = "/";
+  };
 
   function UserIcon(props) {
     return (
@@ -146,70 +146,81 @@ const Profile = (props) => {
               />
               <TextField
                 id="outlined-read-only-input"
+                label="E-mail"
+                defaultValue="E-mail"
+                InputProps={{
+                  readOnly: true,
+                }}
+              />
+              <TextField
+                id="outlined-read-only-input"
                 label="Ano de entrada"
                 defaultValue="Ano que iniciou o curso"
                 InputProps={{
                   readOnly: true,
                 }}
               />
-            
-                <h5>Discussões</h5>
-                <List component="nav" aria-label="secondary mailbox folder">
-                  <ListItemButton
-                    selected={selectedIndex === 2}
-                    onClick={(event) => handleListItemClick(event, 2)}
-                  >
-                    <ListItemText primary="Tópico 1" />
-                  </ListItemButton>
-                  <ListItemButton
-                    selected={selectedIndex === 3}
-                    onClick={(event) => handleListItemClick(event, 3)}
-                  >
-                    <ListItemText primary="Tópico 2" />
-                  </ListItemButton>
-                </List>
-                <BootstrapDialog
-                  onClose={handleClose}
-                  aria-labelledby="customized-dialog-title"
-                  open={open}
+
+              <h5>Discussões</h5>
+              <List component="nav" aria-label="secondary mailbox folder">
+                <ListItemButton
+                  selected={selectedIndex === 2}
+                  onClick={(event) => handleListItemClick(event, 2)}
                 >
-                  <BootstrapDialogTitle
-                    id="customized-dialog-title"
-                    onClose={handleClose}
-                  >
-                    Modal title
-                  </BootstrapDialogTitle>
-                  <DialogContent dividers>
-                    <Typography gutterBottom>
-                      Cras mattis consectetur purus sit amet fermentum. Cras
-                      justo odio, dapibus ac facilisis in, egestas eget quam.
-                      Morbi leo risus, porta ac consectetur ac, vestibulum at
-                      eros.
-                    </Typography>
-                    <Typography gutterBottom>
-                      Praesent commodo cursus magna, vel scelerisque nisl
-                      consectetur et. Vivamus sagittis lacus vel augue laoreet
-                      rutrum faucibus dolor auctor.
-                    </Typography>
-                    <Typography gutterBottom>
-                      Aenean lacinia bibendum nulla sed consectetur. Praesent
-                      commodo cursus magna, vel scelerisque nisl consectetur et.
-                      Donec sed odio dui. Donec ullamcorper nulla non metus
-                      auctor fringilla.
-                    </Typography>
-                  </DialogContent>
-                  <DialogActions>
-                    <Button autoFocus onClick={handleClose}>
-                      Fechar
-                    </Button>
-                  </DialogActions>
-                </BootstrapDialog>
-                {user === 'profile' &&
-                  <div className="buttons">
-                    <Button variant="contained" onClick={handleLogout}>Sair</Button>
-                  </div>
-                }
-              
+                  <ListItemText primary="Tópico 1" />
+                </ListItemButton>
+                <ListItemButton
+                  selected={selectedIndex === 3}
+                  onClick={(event) => handleListItemClick(event, 3)}
+                >
+                  <ListItemText primary="Tópico 2" />
+                </ListItemButton>
+              </List>
+              <BootstrapDialog
+                onClose={handleClose}
+                aria-labelledby="customized-dialog-title"
+                open={open}
+              >
+                <BootstrapDialogTitle
+                  id="customized-dialog-title"
+                  onClose={handleClose}
+                >
+                  Modal title
+                </BootstrapDialogTitle>
+                <DialogContent dividers>
+                  <Typography gutterBottom>
+                    Cras mattis consectetur purus sit amet fermentum. Cras justo
+                    odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
+                    risus, porta ac consectetur ac, vestibulum at eros.
+                  </Typography>
+                  <Typography gutterBottom>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur et. Vivamus sagittis lacus vel augue laoreet
+                    rutrum faucibus dolor auctor.
+                  </Typography>
+                  <Typography gutterBottom>
+                    Aenean lacinia bibendum nulla sed consectetur. Praesent
+                    commodo cursus magna, vel scelerisque nisl consectetur et.
+                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor
+                    fringilla.
+                  </Typography>
+                </DialogContent>
+                <DialogActions>
+                  <Button autoFocus onClick={handleClose}>
+                    Go to Forum
+                  </Button>
+                  <Button autoFocus onClick={handleClose}>
+                    Fechar
+                  </Button>
+                </DialogActions>
+              </BootstrapDialog>
+              {user === "profile" && (
+                <div className="buttons">
+                  <Button variant="contained" onClick={handleLogout}>
+                    Sair
+                  </Button>
+                </div>
+              )}
             </Box>
           </Grid>
         </Grid>
