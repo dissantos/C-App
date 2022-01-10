@@ -1,0 +1,49 @@
+.main {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  margin: 30px 30px;
+  column-gap: 8em;
+  height: 100vh;
+  overflow: hidden;
+  border: 1px solid #57575741;
+  border-radius: 10px;
+}
+
+.col-1 {
+  width: 30%;
+  float: left;
+}
+
+.col-2 {
+  width: 100%;
+  padding: 15px 40px;
+  float: left;
+  box-shadow: 0 2px 23px 0 rgba(0, 0, 0, 0.1), 0 2px 49px 0 rgba(0, 0, 0, 0.06);
+}
+
+p {
+  width: 30vw;
+}
+
+p.message {
+  width: 75%;
+  border-radius: 20px;
+  padding: 15px;
+  background-color:  #557ab95b;
+}
+
+p.logged {
+  margin-left: 25%;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #5579b9;
+  color: #F5F5F5;
+  font-weight: 400;
+} 
+
+.send-message {
+  position: absolute;
+  bottom: -5%;
+  width: 63%;
+}
