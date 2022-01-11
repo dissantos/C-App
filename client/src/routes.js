@@ -6,11 +6,11 @@ import Login from "./components/Login/Login";
 import News from "./components/News/News";
 import MainNews from "./components/MainNews/MainNews";
 import SignUp from './components/SignUp/SignUp'
-import SuasAtividades from "./components/SuasAtividades/SuasAtividades";
 import Profile from "./components/Profile/Profile";
 import Search from './components/Search/Search';
 import Button from "@mui/material/Button";
 import Forum from "./components/Forum/ForumPage";
+import ActivitiesPage from "./components/Activities/ActivitiesPage"
 
 
 const Router = () => {
@@ -38,7 +38,7 @@ const Router = () => {
         <Route path="/signup" element={localStorage.getItem('@C-app/login') ? userLogged : <SignUp/>}/>
         <Route path="/search" element={<Search/>}/>
         <Route path="/forum" element={<Forum/>}/>
-        <Route path="/activity" element={localStorage.getItem('@C-app/login') ? <SuasAtividades/> : accessDenied}/>
+        <Route path="/activity" element={localStorage.getItem('@C-app/login') ? <ActivitiesPage/> : accessDenied}/>
         <Route path="/profile" element={localStorage.getItem('@C-app/login') ? <Profile user={null}/> : accessDenied}/>
         <Route path="/profile/:user" element={<Profile/>}/>
         <Route path="/principal" element={localStorage.getItem('@C-app/login') ? <Home/> : accessDenied}/>
