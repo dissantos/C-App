@@ -1,0 +1,54 @@
+:root {
+  --font: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  --main-color: #404e82;
+  --events-color: #5579b9;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+  margin: 5%;
+  justify-content: space-around;
+}
+
+.month-calendar {
+  width: 100%;
+  grid-column: 1;
+}
+
+.events {
+  margin-top: 40px;
+  display: block;
+  border-radius: 15px;
+  background-color: var(--events-color);
+  color: white;
+  padding: 10px;
+}
+
+.event-title {
+  text-align: left;
+  padding-left: 5%;
+  font-weight: bold;
+}
+
+.event-content {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.week-calendar {
+  width: 100%;
+  grid-column: 2;
+}
+
+.week-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  font-family: var(--font);
+  color: var(--main-color);
+}
