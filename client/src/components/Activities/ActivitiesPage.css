@@ -14,7 +14,7 @@
 }
 
 .month-calendar {
-  width: 100%;
+  width: 80%;
   grid-column: 1;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .week-calendar {
-  width: 100%;
+  width: 90%;
   grid-column: 2;
 }
 
@@ -52,3 +52,4 @@
   font-family: var(--font);
   color: var(--main-color);
 }
+

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./ActivitiesPage.css";
 import Calendar from "../Calendar/Calendar";
 import MonthCalendar from "../Calendar/MonthCalendar";

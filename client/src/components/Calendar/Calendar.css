@@ -1,23 +1,24 @@
-h2.fc-toolbar-title {
+.week-calendar h2.fc-toolbar-title {
   color: var(--main-color);
 }
 
-.fc table {
+.week-calendar .fc table {
   border-radius: 15px;
 }
 
-.fc-col-header-cell {
+.week-calendar .fc-col-header-cell {
   font-size: small;
 }
 
-a.fc-col-header-cell-cushion {
+.week-calendar a.fc-col-header-cell-cushion {
   color: var(--main-color);
 }
 
-.fc .fc-prev-button {
+.week-calendar .fc .fc-prev-button {
   outline: none;
 }
-.fc .fc-next-button {
+
+.week-calendar .fc .fc-next-button {
   outline: none;
 }
 
