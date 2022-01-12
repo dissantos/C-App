@@ -26,6 +26,7 @@ p {
 }
 
 p.message {
+  text-align: left;
   width: 75%;
   border-radius: 20px;
   padding: 15px;
