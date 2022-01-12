@@ -53,6 +53,12 @@ C-App usa um número de projetos open source para funcionar:
 ### Frontend
 Para o Frontend é usado o [React](https://pt-br.reactjs.org/). 
 
+Antes de inciar a instalação, abra a pasta client e crie o arquivo .env dentro dela. Neste arquivo coloque a seguinte declaração:
+```
+SKIP_PREFLIGHT_CHECK=true
+```
+
+Abra o terminal na pasta principal do projeto e execute os seguintes comandos:
 ```sh
 cd client
 npm i

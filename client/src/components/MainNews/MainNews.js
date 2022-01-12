@@ -68,7 +68,7 @@ const MainNews = () => {
         {newsCarsExample.map((newsCard, id) => {
           return (
             <Grid item key={id}>
-              <NewsCard {...newsCard}></NewsCard>
+              <NewsCard {...newsCard} className="news"></NewsCard>
             </Grid>
           )
         })}

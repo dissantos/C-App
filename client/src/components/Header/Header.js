@@ -8,6 +8,7 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import IconButton from "@material-ui/core/IconButton";
 import { MdAccountCircle } from "react-icons/md";
 import { Link } from "react-router-dom"
+import logo from "./C_App_logo_transparente.svg";
 
 function Header() {
   return (
@@ -17,8 +18,8 @@ function Header() {
           <Container>
             <Navbar.Collapse id="navbar-nav" className="app-header">
               <Nav className="menu">
-                <Navbar.Brand href="#c-app" className="logo">
-                  C-app
+                <Navbar.Brand href="/" className="logo" style={{backgroundImage: logo}}>
+                  <img src={logo} width='30px'></img>
                 </Navbar.Brand>
                 {
                   window.localStorage.getItem('@C-app/login') &&
