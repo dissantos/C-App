@@ -1,6 +1,5 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import PropTypes from 'prop-types';
 import './Search.css';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';

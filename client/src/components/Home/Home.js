@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./Home.css";
 import DadosAcademicos from "../DadosAcademicos/DadosAcademicos";
 import SuasAtividades from "../SuasAtividades/SuasAtividades";

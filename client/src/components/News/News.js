@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './News.css';
 import Divider from '@mui/material/Divider';
 import Typography from '@material-ui/core/Typography';

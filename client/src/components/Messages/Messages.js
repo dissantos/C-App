@@ -1,8 +1,5 @@
 import React from "react";
 import { TextField } from "@material-ui/core";
-import SendIcon from "@mui/icons-material/Send";
-
-const sendMessage = () => {};
 
 const Messages = () => {
   return (

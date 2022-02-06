@@ -45,20 +45,15 @@ class SuasAtividades extends React.Component {
 }
 
 export function eventAddition(start, end, title) {
-  var x = {
+  let x = {
     title: "",
     start: "2021-12-29T00:00:00",
     end: "2021-12-29T23:59:59",
   };
-  var y = {
+  let y = {
     title: "",
     start: "2021-12-30T00:00:00",
     end: "2021-12-30T23:59:59",
-  };
-  var obj = {
-    title: title,
-    start: start + "T00:00:00",
-    end: end + "T23:59:59",
   };
 
   eventsList.push(x);

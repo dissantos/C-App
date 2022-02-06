@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './MainNews.css';
 import NewsCard from '../NewsCard/NewsCard';
 import { Grid, Typography } from '@material-ui/core';

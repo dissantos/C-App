@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import AppBar from "@material-ui/core/AppBar";
 
 const Footer = () => (
     <p className="footer">

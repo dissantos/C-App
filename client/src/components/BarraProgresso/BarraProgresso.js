@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./BarraProgresso.css";
 
 // Referência: https://dev.to/ramonak/react-how-to-create-a-custom-progress-bar-component-in-5-minutes-2lcl

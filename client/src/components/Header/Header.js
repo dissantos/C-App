@@ -7,7 +7,6 @@ import Container from "react-bootstrap/Container";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import IconButton from "@material-ui/core/IconButton";
 import { MdAccountCircle } from "react-icons/md";
-import { Link } from "react-router-dom"
 import logo from "./C_App_logo_transparente.svg";
 
 function Header() {

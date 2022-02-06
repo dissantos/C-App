@@ -6,7 +6,6 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Button from '@mui/material/Button';
 import ImageUploading from 'react-images-uploading';
-import PropTypes from 'prop-types';
 import './SignUp.css';
 import Lock from '@material-ui/icons/Lock';
 import Alert from '@mui/material/Alert';

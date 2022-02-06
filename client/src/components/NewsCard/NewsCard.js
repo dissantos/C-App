@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './NewsCard.css';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
