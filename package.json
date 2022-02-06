@@ -24,7 +24,9 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
+    "pg": "^8.7.3",
     "react-icons": "^4.3.1"
   },
   "devDependencies": {

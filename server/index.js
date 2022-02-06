@@ -1,18 +1,35 @@
 const express = require("express");
-
-const PORT = process.env.PORT || 3001;
-
+const bodyParser = require('body-parser')
 const app = express();
+const router = express.Router()
+const PORT = process.env.PORT || 3001;
+const dbHome = require('./database/home')
 
+app.use(require("cors")())
+app.use(bodyParser.json())
+app.use(
+    bodyParser.urlencoded({
+        extended: true,
+    })
+)
+app.use('/', router)
+
+/*
 app.get("/", (req, res) => {
   console.log("Teste")
   res.send("Entrou")
 });
+*/
 
-app.post("/post", (req, res) => {
-  console.log("Connected to React");
-  res.redirect("/");
-});
+router
+    .route('/home/dadosAcademicos')
+    .post(dbHome.getDadosAcademicos)
+
+router
+    .route('/home/SuasAtividades')
+    //.get(dbHome.getDadosAcademicos)
+
+  
 
 app.listen(PORT, (err) => {
   if (err) {
