@@ -9,6 +9,9 @@ function App() {
     <div className="App">
       <Header></Header>
       <Router></Router>
+      <form action="../../post" method="post" className="form">
+        <button type="submit">Connected?</button>
+      </form>
       <Footer></Footer>
     </div>
   );
