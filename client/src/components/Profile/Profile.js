@@ -114,7 +114,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Nome"
-                defaultValue="Nome do usuário"
+                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].nome}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -122,7 +122,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Nome completo"
-                defaultValue="Nome Sobrenome"
+                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].nome_completo}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -130,7 +130,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Matrícula"
-                defaultValue="20181234567"
+                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].matricula}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -138,7 +138,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Curso"
-                defaultValue="Nome do curso"
+                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].curso}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -146,7 +146,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="E-mail"
-                defaultValue="E-mail"
+                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].email}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -154,7 +154,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Ano de entrada"
-                defaultValue="Ano que iniciou o curso"
+                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].ano_entrada}
                 InputProps={{
                   readOnly: true,
                 }}

@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router()
 const PORT = process.env.PORT || 3001;
 const dbHome = require('./database/home')
+const dbUserData = require('./database/profile')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -29,7 +30,9 @@ router
     .route('/home/SuasAtividades')
     //.get(dbHome.getDadosAcademicos)
 
-  
+router
+    .route('/login')
+    .post(dbUserData.getUserData)
 
 app.listen(PORT, (err) => {
   if (err) {
