@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router()
 const PORT = process.env.PORT || 3001;
 const dbHome = require('./database/home')
+const dbUserData = require('./database/profile')
 const dbAtividades = require('./database/atividades')
 
 app.use(require("cors")())
@@ -30,7 +31,9 @@ router
     .route('/home/atividades')
     .post(dbAtividades.getAtividades)
 
-  
+router
+    .route('/login')
+    .post(dbUserData.getUserData)
 
 app.listen(PORT, (err) => {
   if (err) {

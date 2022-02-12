@@ -1,0 +1,26 @@
+Insert into public."Aluno"(nome,nome_completo,email,matricula,curso,ano_entrada,id_topic,id_msg,carga_horaria_opt,carga_horaria_compl,carga_horaria_obrigat,carga_horaria_total,percent_concluido,coeficiente,senha) 
+Values ('nome', 'nome_completo', 'email','matricula', 'curso', 'ano_entrada','id_topic', 'id_msg', 'carga_horaria_opt','carga_horaria_compl', 'carga_horaria_obrigat', 'carga_horaria_total','percent_concluido', 'coeficiente', 'senha','$15');
+
+Insert into public."Aluno"(nome,nome_completo,email, matricula, curso, ano_entrada, id_topic, id_msg, 
+carga_horaria_opt, carga_horaria_compl, carga_horaria_obrigat, carga_horaria_total, percent_concluido,coeficiente,senha) Values ('Giacinto', 'Giacinto Alexandrie', 'giacinto@exemplo.com','201912346789', 'Engenharia de Computação', '2019','5', '5', '390','300', '1500', '4380','50.00', '77','1234');
+Insert into public."Aluno"(nome,nome_completo,email,matricula,curso,ano_entrada,id_topic,id_msg,carga_horaria_opt,carga_horaria_compl,carga_horaria_obrigat,carga_horaria_total,percent_concluido,coeficiente,senha) 
+siggava::DATABASE-> Values ('Dutch', 'Dutch Susanna', 'dutch@exemplo.com','201812346789', 'Engenharia de Computação', '2018','4', '4', '30','120', '2700', '4380','65.07', '84','admin123');
+Insert into public."Aluno"(nome,nome_completo,email,matricula,curso,ano_entrada,id_topic,id_msg,carga_horaria_opt,carga_horaria_compl,carga_horaria_obrigat,carga_horaria_total,percent_concluido,coeficiente,senha) Values ('Kristin', 'Kristin Pétronille', 'kristin@exemplo.com','201612346789', 'Engenharia de Computação', '2016','2', '2', '210','330', '3000', '4380','80.82', '65','123456');
+Insert into public."Aluno"(nome,nome_completo,email,matricula,curso,ano_entrada,id_topic,id_msg,carga_horaria_opt,carga_horaria_compl,carga_horaria_obrigat,carga_horaria_total,percent_concluido,coeficiente,senha) 
+siggava::DATABASE-> Values ('Celso', 'Celso Casey', 'celso@exemplo.com','201712346789', 'Engenharia de Computação', '2017','3', '3', '180','240', '2100', '4380','57.53', '90','admin');
+
+
+Insert into public."Atividades"(id_atividade, nome_disciplina, nome_atividade, data, id_matricula) 
+Values ('01', 'METODOLOGIA DE PESQUISA', 'Avaliação dos vídeos do seminário por pares e autoavaliação','09/02/2022', '201912346789');
+Insert into public."Atividades"(id_atividade, nome_disciplina, nome_atividade, data, id_matricula) 
+Values ('02', 'TÓPICOS ESPECIAIS EM ENGENHARIA DE SOFTWARE: PROGRAMAÇÃO PARA WEB', 'Projeto: entrega final (domingo)','08/02/2022', '201912346789');
+Insert into public."Atividades"(id_atividade, nome_disciplina, nome_atividade, data, id_matricula)  Values ('03', 'TÓPICOS ESPECIAIS EM ENGENHARIA DE SOFTWARE: PROGRAMAÇÃO PARA WEB', 'Atividade: Jardim Zumbi &#129503;','17/02/2022', '201712346789');
+Insert into public."Atividades"(id_atividade, nome_disciplina, nome_atividade, data, id_matricula)  Values ('04', '	INTELIGÊNCIA COMPUTACIONAL I', 'Tarefa Prática - Clustering e PCA;','14/02/2022', '201612346789');
+
+Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic)  Values ('2', 'O código de voces tambem demora mais de 5h pra finalizar?', 'Duvidas','Problema na atividade de PCA');
+Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic)  Values ('1', 'O CEFET autoriza estágio de 2 horas diárias?', 'Estagio','Estágio de 2h');
+
+Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic)  Values ('1', 'Kristin Pétronille', 'O meu demorou 3h','04/02/2022',1);
+
+
+    
