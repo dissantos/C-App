@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router()
 const PORT = process.env.PORT || 3001;
 const dbHome = require('./database/home')
+const dbAtividades = require('./database/atividades')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -26,8 +27,8 @@ router
     .post(dbHome.getDadosAcademicos)
 
 router
-    .route('/home/SuasAtividades')
-    //.get(dbHome.getDadosAcademicos)
+    .route('/home/atividades')
+    .post(dbAtividades.getAtividades)
 
   
 
