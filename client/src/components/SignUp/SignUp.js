@@ -148,7 +148,7 @@ const SignUp = () => {
       {errorSignup &&  
         <Snackbar open={errorSignup} onClose={() => setErrorSignup(false)}>
           <Alert onClose={() => setErrorAlert(false)} color="error" variant="filled" >
-            Erro no cadastro — matrícula ou nome de usuário já existe no sistema.
+            Erro no cadastro — matrícula, email ou nome de usuário já existe no sistema.
           </Alert>
         </Snackbar>
       }
