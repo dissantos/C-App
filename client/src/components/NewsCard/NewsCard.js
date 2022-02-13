@@ -10,9 +10,11 @@ import { CardActionArea } from '@mui/material';
 const NewsCard = (props) => {
   const { category, title, dateDay, dateMonth, url } = props;
 
+  const path = url.replace("https://www.cefetmg.br/noticias/","");
+
   return (
     <Card sx={{ width: 400 }}>
-      <CardActionArea sx={{ display: 'flex' }} onClick={() => window.location.href='/news'}>
+      <CardActionArea sx={{ display: 'flex' }} onClick={() => window.location.href=`/news/${path}`}>
         <Box
           component="div"
           sx={{ width: 100, height: 'max-content', borderRadius : '20px 0 0 20px', border: 'solid 1px black'}}

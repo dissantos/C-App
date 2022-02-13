@@ -1,24 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './News.css';
 import Divider from '@mui/material/Divider';
 import Typography from '@material-ui/core/Typography';
 import parse from 'html-react-parser';
-
+import getNoticia from "../../functions/getNoticia";
 
 const News = (props) => {
-  const {category, title, url} = props;
-  const content = `
-    <h3>O content vai ser pego pelo crawler usando a url</h3>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti cum praesentium vero incidunt quod non quae, laudantium fuga eos dignissimos eum aliquam, aspernatur fugiat ipsa quos quisquam deleniti velit maiores et, eligendi consectetur numquam. Repellat fugit dolor hic veritatis voluptatibus consequuntur praesentium consectetur, labore, nihil quae itaque! Eius eum, quasi odio voluptatem voluptatum nam similique aut explicabo! Tenetur provident, reiciendis quis saepe aut modi voluptatum, blanditiis dignissimos distinctio accusantium dolores.
-  `
+  const params = window.location.href.split("/");
+  const path = params[params.length - 2];
+  const [state, setState] = useState({
+    title: '',
+    subtitle: '',
+    date: '',
+    content: []
+  });
+
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const response = await getNoticia(path);
+      const newsContent = {
+        title: response.title,
+        subtitle: response.subtitle,
+        date: response.date,
+        content: response.content
+      }
+      setState(newsContent)
+    }
+    fetchNews();
+  },[])
 
   return (
     <div className="News">
-      <Divider textAlign="left">
-        <Typography variant='h4' sx={{padding: '20px', color: '#5579b9'}}>{category}</Typography>
+      <Divider textAlign="center">
+        <Typography variant='h5' sx={{padding: '20px', color: '#5579b9'}}>{state.title}</Typography>
       </Divider>
-      <Typography variant='h2' sx={{padding: '20px', color: '#5579b9'}}>{title}</Typography>
-      {parse(content)}
+      <h3 className="subtitle">{state.subtitle}</h3>
+      <h5 className="date">{state.date}</h5>
+      <div className="content">
+        {state.content.map(el => {
+          return parse(el)
+        })}
+      </div>
     </div>
   );
 }
