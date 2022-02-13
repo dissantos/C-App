@@ -7,6 +7,7 @@ const dbHome = require('./database/home')
 const dbUserData = require('./database/profile')
 const reqNoticias = require('./database/noticias')
 const reqNoticia = require('./database/noticia')
+const dbAtividades = require('./database/atividades')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -29,8 +30,8 @@ router
     .post(dbHome.getDadosAcademicos)
 
 router
-    .route('/home/SuasAtividades')
-    //.get(dbHome.getDadosAcademicos)
+    .route('/home/atividades')
+    .post(dbAtividades.getAtividades)
 
 router
     .route('/login')
