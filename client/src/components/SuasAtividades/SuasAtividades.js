@@ -1,5 +1,5 @@
 import React from "react";
-import FullCalendar from "@fullcalendar/react";
+import FullCalendar, { listenBySelector } from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import lang from "@fullcalendar/core/locales/pt-br";
 import "./SuasAtividades.css";
@@ -26,22 +26,26 @@ let eventsList = [
 class SuasAtividades extends React.Component {
   constructor() {
     super();
-
+    /*
     this.state = {
       nome_disciplina: "",
       nome_atividade: "",
       data: "",
-    };
+    };*/
   }
 
   async componentDidMount() {
     let res = await getAtividades();
-    console.log(res);
-    this.setState({
-      nome_disciplina: res[0].nome_disciplina,
-      nome_atividade: res[0].nome_atividade,
-      data: res[0].data,
+    let obj = [];
+    res.forEach((e) => {
+      const atividade = {
+        nome_disciplina: e.nome_disciplina,
+        nome_atividade: e.nome_atividade,
+        data: e.data,
+      };
+      obj.push(atividade);
     });
+    this.setState(obj);
   }
 
   render() {
@@ -66,24 +70,19 @@ class SuasAtividades extends React.Component {
 }
 
 export function eventAddition(state) {
-  console.log(state)
-  /*let data = () => {
-    state.data
-  }*/
+  if (state) {
+    Object.values(state).forEach((e) => {
+      const event = {
+        title: e.nome_atividade,
+        start: `${e.data}T00:00:00`,
+        end: `${e.data}T23:59:59`,
+      };
+      eventsList.push(event);
+    });
 
-  let x = {
-    title: state.nome_atividade, //this.state.nome_atividade,
-    start: `2021-12-29T00:00:00`,
-    end: `2021-12-29T23:59:59`,
-  };
-  let y = {
-    title: "",
-    start: "2021-12-30T00:00:00",
-    end: "2021-12-30T23:59:59",
-  };
+    console.log(eventsList);
+  }
 
-  eventsList.push(x);
-  eventsList.push(y);
   const filteredEventsList = eventsList.reduce((a, current) => {
     const x = a.find((item) => item.start === current.start);
     if (!x) {
