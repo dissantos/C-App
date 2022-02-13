@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./Profile.css";
 import Button from "@mui/material/Button";
@@ -18,6 +18,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
+import getTopico from "../../functions/getTopico";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -58,6 +59,9 @@ BootstrapDialogTitle.propTypes = {
 };
 
 const Profile = (props) => {
+  const [state, setState] = useState([]);
+  const [test, setTest] = useState("");
+
   const [open, setOpen] = React.useState(false);
   const params = window.location.href.split("/");
   const user = params[params.length - 1];
@@ -67,16 +71,42 @@ const Profile = (props) => {
   };
 
   const [selectedIndex, setSelectedIndex] = React.useState(1);
-
-  const handleListItemClick = (event, index) => {
+  const [content, setContent] = React.useState("");
+  const [title, setTitle] = React.useState("");
+  const handleListItemClick = (event, index, value, titulo) => {
     setSelectedIndex(index);
     setOpen(true);
+    setContent(value);
+    setTitle(titulo);
   };
 
   const handleLogout = () => {
     window.localStorage.removeItem("@C-app/login");
     window.location.href = "/";
   };
+
+  useEffect(() => {
+    const fetchTopico = async () => {
+      const id_topico = JSON.parse(
+        window.localStorage.getItem("@C-app/login")
+      )[0].id_topic;
+      let response = await getTopico(id_topico);
+      let obj = [];
+      response.forEach((e) => {
+        console.log(e);
+        const topico = {
+          id_topic: e.id_topic,
+          mensagem: e.mensagem,
+          categoria_topic: e.categoria_topic,
+          nome_topic: e.nome_topic,
+        };
+        obj.push(JSON.stringify(topico));
+      });
+      setTest("teste1");
+      setState(obj);
+    };
+    fetchTopico();
+  }, []);
 
   function UserIcon(props) {
     return (
@@ -114,7 +144,10 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Nome"
-                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].nome}
+                defaultValue={
+                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                    .nome
+                }
                 InputProps={{
                   readOnly: true,
                 }}
@@ -122,7 +155,10 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Nome completo"
-                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].nome_completo}
+                defaultValue={
+                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                    .nome_completo
+                }
                 InputProps={{
                   readOnly: true,
                 }}
@@ -130,7 +166,10 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Matrícula"
-                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].matricula}
+                defaultValue={
+                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                    .matricula
+                }
                 InputProps={{
                   readOnly: true,
                 }}
@@ -138,7 +177,10 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Curso"
-                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].curso}
+                defaultValue={
+                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                    .curso
+                }
                 InputProps={{
                   readOnly: true,
                 }}
@@ -146,7 +188,10 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="E-mail"
-                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].email}
+                defaultValue={
+                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                    .email
+                }
                 InputProps={{
                   readOnly: true,
                 }}
@@ -154,7 +199,10 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Ano de entrada"
-                defaultValue={JSON.parse(window.localStorage.getItem('@C-app/login'))[0].ano_entrada}
+                defaultValue={
+                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                    .ano_entrada
+                }
                 InputProps={{
                   readOnly: true,
                 }}
@@ -162,19 +210,27 @@ const Profile = (props) => {
 
               <h5>Discussões</h5>
               <List component="nav" aria-label="secondary mailbox folder">
-                <ListItemButton
-                  selected={selectedIndex === 2}
-                  onClick={(event) => handleListItemClick(event, 2)}
-                >
-                  <ListItemText primary="Tópico 1" />
-                </ListItemButton>
-                <ListItemButton
-                  selected={selectedIndex === 3}
-                  onClick={(event) => handleListItemClick(event, 3)}
-                >
-                  <ListItemText primary="Tópico 2" />
-                </ListItemButton>
+                {state.map((nome_topic) => {
+                  return (
+                    <ListItemButton
+                      selected={selectedIndex === 2}
+                      onClick={(event) =>
+                        handleListItemClick(
+                          event,
+                          2,
+                          JSON.parse(nome_topic).mensagem,
+                          JSON.parse(nome_topic).nome_topic
+                        )
+                      }
+                    >
+                      <ListItemText
+                        primary={JSON.parse(nome_topic).nome_topic}
+                      />
+                    </ListItemButton>
+                  );
+                })}
               </List>
+              {state.nome_topic}
               <BootstrapDialog
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
@@ -184,30 +240,14 @@ const Profile = (props) => {
                   id="customized-dialog-title"
                   onClose={handleClose}
                 >
-                  Modal title
+                  <span>{title}</span>
                 </BootstrapDialogTitle>
                 <DialogContent dividers>
                   <Typography gutterBottom>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo
-                    odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                    risus, porta ac consectetur ac, vestibulum at eros.
-                  </Typography>
-                  <Typography gutterBottom>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur et. Vivamus sagittis lacus vel augue laoreet
-                    rutrum faucibus dolor auctor.
-                  </Typography>
-                  <Typography gutterBottom>
-                    Aenean lacinia bibendum nulla sed consectetur. Praesent
-                    commodo cursus magna, vel scelerisque nisl consectetur et.
-                    Donec sed odio dui. Donec ullamcorper nulla non metus auctor
-                    fringilla.
+                    <span>{content}</span>
                   </Typography>
                 </DialogContent>
                 <DialogActions>
-                  <Button autoFocus onClick={handleClose}>
-                    Go to Forum
-                  </Button>
                   <Button autoFocus onClick={handleClose}>
                     Fechar
                   </Button>
