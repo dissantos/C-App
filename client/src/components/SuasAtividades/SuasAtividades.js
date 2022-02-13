@@ -1,5 +1,5 @@
 import React from "react";
-import FullCalendar, { listenBySelector } from "@fullcalendar/react";
+import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import lang from "@fullcalendar/core/locales/pt-br";
 import "./SuasAtividades.css";
@@ -24,12 +24,11 @@ let eventsList = [
 ];
 
 class SuasAtividades extends React.Component {
-  constructor() {
-    super();
-  }
-
   async componentDidMount() {
-    let res = await getAtividades();
+    const matricula = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+      .matricula;
+
+    let res = await getAtividades(matricula);
     let obj = [];
     res.forEach((e) => {
       const atividade = {
