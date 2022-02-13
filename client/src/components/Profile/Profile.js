@@ -93,7 +93,6 @@ const Profile = (props) => {
       let response = await getTopico(id_topico);
       let obj = [];
       response.forEach((e) => {
-        console.log(e);
         const topico = {
           id_topic: e.id_topic,
           mensagem: e.mensagem,
@@ -210,9 +209,9 @@ const Profile = (props) => {
 
               <h5>Discussões</h5>
               <List component="nav" aria-label="secondary mailbox folder">
-                {state.map((nome_topic) => {
+                {state.map((nome_topic, id) => {
                   return (
-                    <ListItemButton
+                    <ListItemButton key={id}
                       selected={selectedIndex === 2}
                       onClick={(event) =>
                         handleListItemClick(
