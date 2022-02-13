@@ -1,33 +1,32 @@
 import config from "../config.json";
 
-const func = config.baseURL + "home/atividades";
-export default async function get() {  
-  let atividades = [];
+const func = config.baseURL + "noticias";
+export default async function get() {
+  let todasAsNoticias = [];
   let myRequest = new Request(func);
-  var body = {
-    matricula: '201612346789'
-  }
   await fetch(myRequest, {
-    method: "POST",
-    body: JSON.stringify(body),
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
   })
     .then((response) => {
+      console.log(response);
       if (response.status === 200) {
+        console.log("Entrou");
         return response.json();
       } else {
         return "error";
       }
     })
     .then((json) => {
-        atividades = json;
+      console.log(json);
+      todasAsNoticias = json;
     })
     .catch((error) => {
       console.error(error);
-      atividades = []
+      todasAsNoticias = [];
     });
-  return atividades;
+  return todasAsNoticias;
 }

@@ -34,9 +34,9 @@ class SuasAtividades extends React.Component {
     };
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     let res = await getAtividades();
-    //console.log(res[0].nome_disciplina);
+    console.log(res);
     this.setState({
       nome_disciplina: res[0].nome_disciplina,
       nome_atividade: res[0].nome_atividade,
@@ -58,18 +58,21 @@ class SuasAtividades extends React.Component {
           dateClick={this.handleDateClick}
           events={eventsList}
           contentHeight="300px"
-          eventAdd={eventAddition()}
+          eventAdd={eventAddition(this.state)}
         />
       </>
     );
   }
 }
 
-export function eventAddition(start, end, title) {
-  
-  
+export function eventAddition(state) {
+  console.log(state)
+  /*let data = () => {
+    state.data
+  }*/
+
   let x = {
-    title: "teste",//this.state.nome_atividade,
+    title: state.nome_atividade, //this.state.nome_atividade,
     start: `2021-12-29T00:00:00`,
     end: `2021-12-29T23:59:59`,
   };
@@ -91,7 +94,6 @@ export function eventAddition(start, end, title) {
   }, []);
   eventsList = filteredEventsList;
 }
-
 
 SuasAtividades.propTypes = {};
 

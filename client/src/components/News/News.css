@@ -1,3 +1,31 @@
 .News {
     padding: 20px;
 }
+
+.subtitle {
+    margin: 0;
+    padding: 0;
+    padding: 0 15rem;
+    text-align: left;
+    color: gray;
+}
+
+.date {
+
+    padding-left: 15rem;
+    text-align: left;
+}
+
+.content p {
+    margin: 0;
+    padding: 0;
+    padding: 0 15rem;
+    margin-block-end: 15px;
+    width: auto;
+    text-align: justify;
+}
+
+.content p img {
+    display: block;
+    padding: 5px;
+}
