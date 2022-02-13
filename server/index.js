@@ -8,6 +8,7 @@ const dbUserData = require('./database/profile')
 const reqNoticias = require('./database/noticias')
 const reqNoticia = require('./database/noticia')
 const dbAtividades = require('./database/atividades')
+const dbUserSignup = require('./database/newProfile')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -36,6 +37,10 @@ router
 router
     .route('/login')
     .post(dbUserData.getUserData)
+
+router
+    .route('/signup')
+    .post(dbUserSignup.setUser)
 
 router
     .route('/noticias')
