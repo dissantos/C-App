@@ -40,7 +40,7 @@ CREATE TABLE public."Mensagem"
     id VARCHAR(100)  NOT NULL,
     nome_autor VARCHAR(100) NOT NULL,
     conteudo VARCHAR(200) NOT NULL,
-    data VARCHAR(10) NOT NULL,
+    data VARCHAR(50) NOT NULL,
     id_topic VARCHAR(100) NOT NULL,
     id_mensagem VARCHAR(100) NOT NULL,
     PRIMARY KEY (id)

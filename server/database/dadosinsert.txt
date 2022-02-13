@@ -20,7 +20,11 @@ Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_t
 Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('4', 'Quisque scelerisque laoreet erat id volutpat. Praesent porta nisl vel lacus laoreet vulputate.', 'Geral',' Nullam efficitur ','4');
 Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('5', 'Consectetur adipiscing elit. Fusce ultricies sollicitudin erat rutrum gravida. Vivamus interdum scelerisque quam. Curabitur scelerisque enim sed ante eleifend eleifend.', 'Geral','Lorem ipsum dolor sit ame','4');
 
-Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic,id_mensagem)  Values ('1', 'Kristin Pétronille', 'O meu demorou 3h','04/02/2022','2','2');
+Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic,id_mensagem)  Values ('1', 'Kristin Pétronille', 'O meu demorou 3h','2022-02-13T00:00:00','2','2');
+Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic,id_mensagem)  Values ('2', 'Dutch Susanna', '4 e contando...','2022-02-13T03:00:00','2','4');
+Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic,id_mensagem)  Values ('3', 'Kristin Pétronille', 'Nao esquecam do relatorio... sem relatorio professor nem avalia','2022-02-13T03:30:00','2','2');
+Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic,id_mensagem)  Values ('4', 'Dutch Susanna', 'socorro','2022-02-13T04:00:00','2','4');
+
 alter table public."Aluno" add column url VARCHAR(200);
 
     
