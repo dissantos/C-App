@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import lang from "@fullcalendar/core/locales/pt-br";
@@ -34,7 +34,7 @@ class SuasAtividades extends React.Component {
     };
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     let res = await getAtividades();
     console.log(res);
     this.setState({

@@ -1,11 +1,11 @@
 import config from "../config.json";
 
 const func = config.baseURL + "home/dadosAcademicos";
-export default async function get() {  
+export default async function dadosAcademicos(matricula) {  
   let dadosAcademicos = [];
   let myRequest = new Request(func);
   var body = {
-    matricula: '201612346789'
+    matricula: `${matricula}`
   }
   await fetch(myRequest, {
     method: "POST",

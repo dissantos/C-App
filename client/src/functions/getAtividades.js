@@ -17,7 +17,6 @@ export default async function get() {
   })
     .then((response) => {
       if (response.status === 200) {
-        console.log("Entrou")
         return response.json();
       } else {
         return "error";
