@@ -67,9 +67,9 @@ class SuasAtividades extends React.Component {
 
 export function eventAddition(state) {
   console.log(state)
-  let data = () => {
+  /*let data = () => {
     state.data
-  }
+  }*/
 
   let x = {
     title: state.nome_atividade, //this.state.nome_atividade,
