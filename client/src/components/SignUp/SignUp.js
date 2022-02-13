@@ -10,6 +10,10 @@ import './SignUp.css';
 import Lock from '@material-ui/icons/Lock';
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
+import { Typography } from '@material-ui/core';
+import Divider from '@mui/material/Divider';
+import { Slider } from '@mui/material';
+
 
 const SignUp = () => {
   const [values, setValues] = React.useState({
@@ -66,10 +70,26 @@ const SignUp = () => {
     const name = document.querySelector('#name-input').value;
     const user = document.querySelector('#user-input').value;
     const email = document.querySelector('#email-input').value;
-    if(name && user && email && values.password && values.confirmPassword && values.confirmPassword && !values.isIncorrectPassword) {
+    const matricula = document.querySelector('#matricula-input').value;
+    const ano = document.querySelector('#ano-input').value;
+    const curso = document.querySelector('#curso-input').value;
+    const coef = document.querySelector('#coef-input').value;
+    const cargaObg = document.querySelector('#carga-obg-input').value;
+    const cargaOpt = document.querySelector('#carga-opt-input').value;
+    const cargaComp = document.querySelector('#carga-comp-input').value;
+    if(name && user && email && ano && curso && matricula && coef && cargaObg && cargaOpt && cargaComp && values.password && values.confirmPassword && values.confirmPassword && !values.isIncorrectPassword) {
+      const cargaTot = cargaComp + cargaObg + cargaOpt;
+      const perc = cargaTot/4320;
       //TO DO
-
-      localStorage.setItem('@C-app/login',user);
+      const prof = {
+        nome: user,
+        nome_completo: name,
+        matricula: matricula,
+        curso: curso,
+        email: email,
+        ano_entrada: ano,
+      }
+      localStorage.setItem('@C-app/login',prof);
       window.location.href = '/principal';
     } else {
       setErrorAlert(true);
@@ -97,6 +117,28 @@ const SignUp = () => {
         <TextField id="email-input" label="E-mail" variant="outlined" InputProps={ inputPropsEmail } margin='normal' type='email'/>
         <TextField id="password-input" type='password' value={values.password} onChange={handleChange('password')} label="Senha" InputProps={inputPropsPassword} variant="outlined" margin='normal'/>
         <TextField error={values.isIncorrectPassword} id="confirmPassword-input" type='password'  onChange={handleChangeConfirmPassword('confirmPassword')} label="Confirmar Senha" InputProps={inputPropsPassword} variant="outlined" margin='normal' />
+      </Box>
+      <Divider textAlign="center">
+        <Typography variant='h6' sx={{padding: '20px', color: '#5579b9'}}>Dados Acadêmicos:</Typography>
+      </Divider>
+      <Box sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              '& .MuiTextField-root': { width: '50ch' },
+            }}
+      >
+        <TextField id="matricula-input" label="Matrícula" variant="outlined" margin='normal'/>
+        <TextField id="curso-input" label="Curso" variant="outlined" margin='normal'/>
+        <TextField id="ano-input" label="Ano de entrada" variant="outlined" margin='normal'/>
+        <Typography>Carga Horária Obrigatória:</Typography>
+        <Slider id="carga-obg-input" defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} max={4320}/>
+        <Typography>Carga Horária Optativa:</Typography>
+        <Slider id="carga-opt-input" defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} max={4320}/>
+        <Typography>Carga Horária Complementar:</Typography>
+        <Slider id="carga-comp-input" defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} max={4320}/>
+        <Typography>Coeficiente:</Typography>
+        <Slider id="coef" defaultValue={0} aria-label="Default" valueLabelDisplay="auto" min={0} step={0.01} max={100}/>
+        
       </Box>
       <div>
       <label>Imagem de perfil (opcional):</label>
