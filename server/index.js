@@ -5,6 +5,7 @@ const router = express.Router()
 const PORT = process.env.PORT || 3001;
 const dbHome = require('./database/home')
 const dbUserData = require('./database/profile')
+const reqNoticias = require('./database/noticias')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -33,6 +34,10 @@ router
 router
     .route('/login')
     .post(dbUserData.getUserData)
+
+router
+    .route('/noticias')
+    .get(reqNoticias.getNoticiasCefet)
 
 app.listen(PORT, (err) => {
   if (err) {
