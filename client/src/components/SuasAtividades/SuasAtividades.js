@@ -26,12 +26,6 @@ let eventsList = [
 class SuasAtividades extends React.Component {
   constructor() {
     super();
-    /*
-    this.state = {
-      nome_disciplina: "",
-      nome_atividade: "",
-      data: "",
-    };*/
   }
 
   async componentDidMount() {
