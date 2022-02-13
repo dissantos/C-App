@@ -15,6 +15,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Avatar from '@mui/material/Avatar';
+import getUsers from "../../functions/getUsers";
 
 
 const theme = createTheme({
@@ -31,6 +32,7 @@ const theme = createTheme({
 const Search = () => {
 
   const [viewResults, setViewResults] = React.useState(false);
+  const [results, setResults] = React.useState([]);
 
   const inputSearchProps = {
     endAdornment: (
@@ -40,28 +42,27 @@ const Search = () => {
     ),
   }
 
-const handleSearchUsers = () =>{
+  const handleSearchUsers = async (e) =>{
+    e.preventDefault();
+    console.log(e);
+    const search = document.querySelector("#search-id").value;
+    let response = await getUsers(search);
+    const auxResults = []
+    response.forEach((res) => {
+      const auxsResult = {
+        name: res.nome_completo,
+        matricula: res.matricula,
+        username: res.nome,
+        email: res.email,
+        course: res.curso,
+        year: res.ano_entrada,
+        avatar: res.url? res.url: 'https://innostudio.de/fileuploader/images/default-avatar.png'
+      }
+      auxResults.push(auxsResult)
+    })
+    setResults(auxResults)
     setViewResults(true);
-}
-
-  const results = [
-    {
-      name: 'Zuleide de Camboja',
-      username: 'zuzu2000',
-      email: 'zuzu.letras18@gmail.com',
-      course: 'Letras',
-      year: '2016.2',
-      avatar: 'https://img.r7.com/images/expulsoes-e-desistencia-esquenta-a-fazenda-19082020153342546'
-    },
-    {
-      name: 'Cliede Campos',
-      username: 'crecre134',
-      email: 'cleideDaMassa@hotmail.com',
-      course: '',
-      year: '',
-      avatar: 'https://i.ytimg.com/vi/8HUmgQtbOr0/maxresdefault.jpg'
-    }
-  ];
+  }
 
   return (
     <div className="Search">
@@ -85,7 +86,7 @@ const handleSearchUsers = () =>{
                 sx={{ borderRadius: '5px', backgroundColor: '#FFFFFF'}}
                 fullWidth
               />
-              <Button variant="contained" color="primary" sx={{marginLeft: '15px'}} onClick = {() => handleSearchUsers()}>Buscar</Button>
+              <Button variant="contained" color="primary" sx={{marginLeft: '15px'}} onClick = {(e) => handleSearchUsers(e)}>Buscar</Button>
             </ThemeProvider>
           </Box>
       </Box>
@@ -95,7 +96,7 @@ const handleSearchUsers = () =>{
           {results.map((result, id) => {
             return (
             <div>
-              <ListItemButton key={id+1} sx={{width: "auto"}} onClick={() => window.location.href = `/profile/${result.username}`}>
+              <ListItemButton key={id+1} sx={{width: "auto"}} onClick={() => window.location.href = `/profile/${result.matricula}`}>
                 <ListItem alignItems='flex-start' key={id+1}>
                   <ListItemAvatar>
                     <Avatar src={result.avatar}/>

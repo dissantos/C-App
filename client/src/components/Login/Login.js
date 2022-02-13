@@ -84,6 +84,7 @@ const Login = () => {
         carga_horaria_compl: response[0].carga_horaria_compl,
         carga_horaria_total: response[0].carga_horaria_total,
         percent_concluido: response[0].percent_concluido,
+        url: response[0].url ? response[0].url : 'https://innostudio.de/fileuploader/images/default-avatar.png'
       });
 
       setSuccessAlert(true);
