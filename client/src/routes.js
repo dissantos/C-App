@@ -34,7 +34,7 @@ const Router = () => {
       <Routes>
         <Route path="/" exact={true}  element={<MainNews/>}/>
         <Route path="/login" element={localStorage.getItem('@C-app/login') ? userLogged : <Login/>}/>
-        <Route path="/news" element={<News category="Graduação" title="Edital seleciona alunos especiais para Mestrado em Automação e Sistemas" url="https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-"/>}/>
+        <Route path="/news/:path" element={<News />}/>
         <Route path="/signup" element={localStorage.getItem('@C-app/login') ? userLogged : <SignUp/>}/>
         <Route path="/search" element={<Search/>}/>
         <Route path="/forum" element={<Forum/>}/>
