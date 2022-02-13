@@ -13,6 +13,11 @@ import getDadosAcademicos from "../../functions/getDadosAcademicos";
 });
 */
 
+const CARGAOPTATIVA = 450/100
+const CARGAOBRIGATORIA = 4380/100
+const CARGACOMPLEMENTAR = 450/10
+
+
 const total = { barColor: "#003869" };
 
 const complementares = { barColor: "#6b93d8" };
@@ -62,23 +67,23 @@ class DadosAcademicos extends React.Component {
             Progresso Total
             <BarraProgresso
               barColor={total.barColor}
-              completed={this.state.percent_concluido}
+              completed={getValueTotal(this.state)}
             />
           </div>
           <div>Carga obrigatória concluída</div>
           <BarraProgresso
             barColor={obgConcluida.barColor}
-            completed={this.state.carga_horaria_obrigat}
+            completed={getValueObg(this.state)}
           />
           <div>Carga optativa concluída</div>
           <BarraProgresso
             barColor={optativaConcluida.barColor}
-            completed={this.state.carga_horaria_opt}
+            completed={getValueOpt(this.state)}
           />
           <div>Horas complementares</div>
           <BarraProgresso
             barColor={complementares.barColor}
-            completed={this.state.carga_horaria_compl}
+            completed={getValueComplementares(this.state)}
           />
         </div>
       </>
@@ -87,23 +92,23 @@ class DadosAcademicos extends React.Component {
 }
 
 // Estão hardcoded. Depende do backend
-export function getValueTotal() {
-  let value = 80;
+export function getValueTotal(state) {
+  let value = parseFloat(state.percent_concluido);
   return value;
 }
 
-export function getValueComplementares() {
-  let value = 100;
+export function getValueComplementares(state) {
+  let value = Math.round(parseFloat(state.carga_horaria_obrigat)/CARGACOMPLEMENTAR);
   return value;
 }
 
-export function getValueObg() {
-  let value = 82;
+export function getValueObg(state) {
+  let value = Math.round(parseFloat(state.carga_horaria_obrigat)/CARGAOBRIGATORIA);
   return value;
 }
 
-export function getValueOpt() {
-  let value = 90;
+export function getValueOpt(state) {
+  let value = Math.round(parseFloat(state.carga_horaria_opt)/CARGAOPTATIVA);
   return value;
 }
 

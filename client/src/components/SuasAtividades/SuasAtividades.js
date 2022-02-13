@@ -1,29 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import lang from "@fullcalendar/core/locales/pt-br";
 import "./SuasAtividades.css";
 import getAtividades from "../../functions/getAtividades";
-
-const Activities = () => {
-  const [state, setState] = React.useState({
-    nome_disciplina: "",
-    nome_atividade: "",
-    data: "",  
-  });
-
-  const registroAtividade = async () => {
-    
-    let response = await getAtividades();
-    setState({
-      nome_disciplina: response[0].nome_disciplina,
-      nome_atividade: response[0].nome_atividade,
-      data: response[0].data,
-    });
-  
-  };
-  
-}
 
 const titleFormat = {
   month: "long",
@@ -44,7 +24,25 @@ let eventsList = [
 ];
 
 class SuasAtividades extends React.Component {
+  constructor() {
+    super();
 
+    this.state = {
+      nome_disciplina: "",
+      nome_atividade: "",
+      data: "",
+    };
+  }
+
+  async componentWillMount() {
+    let res = await getAtividades();
+    console.log(res);
+    this.setState({
+      nome_disciplina: res[0].nome_disciplina,
+      nome_atividade: res[0].nome_atividade,
+      data: res[0].data,
+    });
+  }
 
   render() {
     return (
@@ -60,18 +58,21 @@ class SuasAtividades extends React.Component {
           dateClick={this.handleDateClick}
           events={eventsList}
           contentHeight="300px"
-          eventAdd={eventAddition()}
+          eventAdd={eventAddition(this.state)}
         />
       </>
     );
   }
 }
 
-export function eventAddition(start, end, title) {
-  
-  
+export function eventAddition(state) {
+  console.log(state)
+  let data = () => {
+    state.data
+  }
+
   let x = {
-    title: "teste",//this.state.nome_atividade,
+    title: state.nome_atividade, //this.state.nome_atividade,
     start: `2021-12-29T00:00:00`,
     end: `2021-12-29T23:59:59`,
   };
@@ -93,7 +94,6 @@ export function eventAddition(start, end, title) {
   }, []);
   eventsList = filteredEventsList;
 }
-
 
 SuasAtividades.propTypes = {};
 
