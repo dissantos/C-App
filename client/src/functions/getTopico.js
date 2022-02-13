@@ -1,11 +1,11 @@
 import config from "../config.json";
 
 const func = config.baseURL + "topicos";
-export default async function get(id_topico) {  
+export default async function get(id_topico_user) {  
   let topicos = [];
   let myRequest = new Request(func);
   var body = {
-    id_topic: `${id_topico}`
+    id_topic_user: `${id_topico_user}`
   }
   await fetch(myRequest, {
     method: "POST",

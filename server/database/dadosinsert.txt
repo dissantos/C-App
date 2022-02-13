@@ -17,8 +17,10 @@ Insert into public."Atividades"(id_atividade, nome_disciplina, nome_atividade, d
 Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('2', 'O código de voces tambem demora mais de 5h pra finalizar?', 'Duvidas','Problema na atividade de PCA', '1');
 Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('3', 'O CEFET autoriza estágio de 2 horas diárias?', 'Estagio','Estágio de 2h','1');
 Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('1', 'O CEFET deveria pagar meus remedios.', 'Geral','Quem paga essa conta?','2');
+Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('4', 'Quisque scelerisque laoreet erat id volutpat. Praesent porta nisl vel lacus laoreet vulputate.', 'Geral',' Nullam efficitur ','4');
+Insert into public."Topico"(id_topic, mensagem, categoria_topic, nome_topic,id_topic_user)  Values ('5', 'Consectetur adipiscing elit. Fusce ultricies sollicitudin erat rutrum gravida. Vivamus interdum scelerisque quam. Curabitur scelerisque enim sed ante eleifend eleifend.', 'Geral','Lorem ipsum dolor sit ame','4');
 
 Insert into public."Mensagem"(id, nome_autor, conteudo, data, id_topic,id_mensagem)  Values ('1', 'Kristin Pétronille', 'O meu demorou 3h','04/02/2022','2','2');
-
+alter table public."Aluno" add column url VARCHAR(200);
 
     

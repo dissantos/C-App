@@ -90,7 +90,9 @@ const Profile = (props) => {
       const id_topico = JSON.parse(
         window.localStorage.getItem("@C-app/login")
       )[0].id_topic;
+      console.log(id_topico);
       let response = await getTopico(id_topico);
+      console.log(response);
       let obj = [];
       response.forEach((e) => {
         const topico = {
@@ -98,6 +100,7 @@ const Profile = (props) => {
           mensagem: e.mensagem,
           categoria_topic: e.categoria_topic,
           nome_topic: e.nome_topic,
+          id_topic_user: e.id_topic_user,
         };
         obj.push(JSON.stringify(topico));
       });
