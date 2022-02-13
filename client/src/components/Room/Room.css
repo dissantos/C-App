@@ -22,3 +22,103 @@ li {
 .marcado {
   background-color: #557ab95b;
 }
+
+.MuiListItemButton-root.MuiListItemButton-gutters.MuiButtonBase-root.css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root{
+  color: aliceblue;
+  display: flex;
+  background-color: #5579b9;
+  list-style-type: none;
+  width: 300px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  align-items: flex-start;
+  font-size: 11px;
+}
+
+.MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.css-10hburv-MuiTypography-root{
+  font-size: 13px;
+  text-align: left;
+}
+
+.MuiList-root.MuiList-padding.nome-sala.css-h4y409-MuiList-root{
+  padding-left: 50px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  margin: 30px 30px;
+  column-gap: 8em;
+  height: 100vh;
+  overflow: hidden;
+  border: 1px solid #57575741;
+  border-radius: 10px;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.css-1dk9rsx-MuiPaper-root{
+  text-align: center;
+  height: 500px;
+}
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-2.css-mhc70k-MuiGrid-root {
+  min-width: 500px;
+  margin: 0px;
+  padding-right: 3%;
+  padding-left: 3%;
+  padding-top: 20px;
+}
+
+.MuiBox-root.css-i9gxme {
+  width: 100%;
+  height: 1000px;
+}
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-true.css-4jz4pb-MuiGrid-root:first-child {
+  padding-left: 0px;
+}
+
+.test{
+    text-align: center;  
+}
+
+
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-14cyfy1-MuiPaper-root-MuiCard-root{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin: 10px;*/
+  margin-top: 20px;
+  width: 300px;
+}
+
+.MuiBox-root.css-8xz80m{
+  height: 80px;
+}
+
+.MuiButtonBase-root.MuiCardActionArea-root.css-ubkqll-MuiButtonBase-root-MuiCardActionArea-root{
+  height: 80px;
+}
+
+.MuiCardContent-root.css-cqe0yk-MuiCardContent-root{
+  height: 80px;
+  padding: 5px;
+}
+
+.MuiBox-root.css-j7qwjs{
+  height: 80px;
+}
+
+.MuiTypography-root.MuiTypography-h6.css-2ulfj5-MuiTypography-root{
+  font-size: small;
+}
+
+.MuiTypography-root.MuiTypography-body1.css-1pnmrwp-MuiTypography-root{
+  font-size: smaller;
+}
+
+.send-message{
+  position: 300px;
+  margin-top: 20px;
+}
