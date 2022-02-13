@@ -16,16 +16,13 @@ export default async function get(path) {
     body: JSON.stringify(body)
   })
     .then((response) => {
-      console.log(response);
       if (response.status === 200) {
-        console.log("Entrou");
         return response.json();
       } else {
         return "error";
       }
     })
     .then((json) => {
-      console.log(json);
       noticia = json;
     })
     .catch((error) => {
