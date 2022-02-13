@@ -7,7 +7,6 @@ import getNoticias from "../../functions/getNoticias";
 
 const MainNews = () => {
   const [state, setState] = useState([]);
-  const [test,setTest] = useState('');
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -23,23 +22,11 @@ const MainNews = () => {
         }
         obj.push(news);
       })
-      setTest('teste1');
       setState(obj);
     };
     fetchNews();
   },[]);
-  /*const handleLogin = async (event) => {
-    event.preventDefault();
-    let response = await getNoticias();
-      setState({
-        category : "", 
-        title : "",
-        dateDay : "",
-        dateMonth : "aaaaaaa",
-        url:'aaaaaa',
-      });
-    console.log(response);
-  };*/
+
 
   return (
     <div className="MainNews">
@@ -57,8 +44,6 @@ const MainNews = () => {
           );
         })}
       </Grid>
-      {state.categoria}
-      {test}
     </div>
   );
 };

@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3001;
 const dbHome = require('./database/home')
 const dbUserData = require('./database/profile')
 const reqNoticias = require('./database/noticias')
+const reqNoticia = require('./database/noticia')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -38,6 +39,10 @@ router
 router
     .route('/noticias')
     .get(reqNoticias.getNoticiasCefet)
+
+router
+  .route('/noticia')
+  .post(reqNoticia.getNoticiaCefet)
 
 app.listen(PORT, (err) => {
   if (err) {
