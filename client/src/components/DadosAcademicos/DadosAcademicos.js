@@ -15,8 +15,6 @@ const obgConcluida = { barColor: "#404E82" };
 
 const optativaConcluida = { barColor: "#5579B9" };
 
-const coeficiente = getCoef();
-
 class DadosAcademicos extends React.Component {
   constructor() {
     super();
@@ -36,7 +34,6 @@ class DadosAcademicos extends React.Component {
       .matricula;
 
     let response = await getDadosAcademicos(matricula);
-    console.log("Teste");
     this.setState({
       carga_horaria_opt: response[0].carga_horaria_opt,
       carga_horaria_obrigat: response[0].carga_horaria_obrigat,
@@ -82,7 +79,6 @@ class DadosAcademicos extends React.Component {
   }
 }
 
-// Estão hardcoded. Depende do backend
 export function getValueTotal(state) {
   let value = parseFloat(state.percent_concluido);
   return value;
