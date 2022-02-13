@@ -1,9 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import lang from "@fullcalendar/core/locales/pt-br";
 import "./SuasAtividades.css";
 import getAtividades from "../../functions/getAtividades";
+
+const Activities = () => {
+  const [state, setState] = React.useState({
+    nome_disciplina: "",
+    nome_atividade: "",
+    data: "",  
+  });
+
+  const registroAtividade = async () => {
+    
+    let response = await getAtividades();
+    setState({
+      nome_disciplina: response[0].nome_disciplina,
+      nome_atividade: response[0].nome_atividade,
+      data: response[0].data,
+    });
+  
+  };
+  
+}
 
 const titleFormat = {
   month: "long",
@@ -24,25 +44,7 @@ let eventsList = [
 ];
 
 class SuasAtividades extends React.Component {
-  constructor() {
-    super();
 
-    this.state = {
-      nome_disciplina: "",
-      nome_atividade: "",
-      data: "",
-    };
-  }
-
-  async componentWillMount() {
-    let res = await getAtividades();
-    //console.log(res[0].nome_disciplina);
-    this.setState({
-      nome_disciplina: res[0].nome_disciplina,
-      nome_atividade: res[0].nome_atividade,
-      data: res[0].data,
-    });
-  }
 
   render() {
     return (
