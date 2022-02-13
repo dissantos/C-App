@@ -44,11 +44,11 @@ function Header() {
               </Nav>
 
               <Nav className="menu-user">
-                {
+                { // Exibe a opção de login ou o nome do usuário dependendo do estado da sessão
                   window.localStorage.getItem('@C-app/login') ?
                     (
                       <>
-                        <span className="name">Seu Nome</span>
+                        <span className="name">{JSON.parse(window.localStorage.getItem('@C-app/login'))[0].nome}</span>
                         <IconButton href="/profile">
                           <SvgIcon className="material-icons">
                             <MdAccountCircle />
