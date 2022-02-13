@@ -2,7 +2,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const url = "https://www.cefetmg.br/";
 
-function getNoticiasCefet() {
+function getNoticiasCefet(req, res) {
   axios(url)
     .then((response) => {
       const html = response.data;
@@ -23,7 +23,7 @@ function getNoticiasCefet() {
           link,
         });
       });
-      console.log(noticiasLista);
+      res.status(200).json(noticiasLista)
       return noticiasLista;
     })
     .catch(console.error);

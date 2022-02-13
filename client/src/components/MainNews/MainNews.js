@@ -6,20 +6,25 @@ import Divider from "@mui/material/Divider";
 import getNoticias from "../../functions/getNoticias";
 
 const MainNews = () => {
-  const [state, setState] = React.useState();
+  const [state, setState] = useState([]);
+  const [test,setTest] = useState('');
 
   useEffect(() => {
     const fetchNews = async () => {
       let response = await getNoticias();
-      let dict = {
-        category: response.categoria,
-        title: response.descricao,
-        dateDay: response.dia,
-        dateMonth: response.mes,
-        url: response.link,
-      };
-      setState(response.json);
-      console.log(response);
+      let obj = [];
+      response.forEach(e => {
+        const news = {
+          category: e.categoria,
+          title: e.descricao,
+          dateDay: e.dia,
+          dateMonth: e.mes,
+          url: e.link,
+        }
+        obj.push(news);
+      })
+      setTest('teste1');
+      setState(obj);
     };
     fetchNews();
   },[]);
@@ -35,65 +40,6 @@ const MainNews = () => {
       });
     console.log(response);
   };*/
-  console.log(state);
-  const newsCarsExample = [
-    {
-      category: "asGraduaçãoaad",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-    {
-      category: "Graduação",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-    {
-      category: "Graduação",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-    {
-      category: "Graduação",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-    {
-      category: "Graduação",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-    {
-      category: "Graduação",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-    {
-      category: "Graduação",
-      title:
-        "Edital seleciona alunos especiais para Mestrado em Automação e Sistemas",
-      dateDay: "23",
-      dateMonth: "dez",
-      url: "https://www.cefetmg.br/noticias/edital-seleciona-alunos-especiais-para-mestrado-",
-    },
-  ];
 
   return (
     <div className="MainNews">
@@ -103,7 +49,7 @@ const MainNews = () => {
         </Typography>
       </Divider>
       <Grid spacing={0} direction="row" alignItems="flex-start" container>
-        {newsCarsExample.map((newsCard, id) => {
+        {state.map((newsCard, id) => {
           return (
             <Grid item key={id}>
               <NewsCard {...newsCard} className="news"></NewsCard>
@@ -111,6 +57,8 @@ const MainNews = () => {
           );
         })}
       </Grid>
+      {state.categoria}
+      {test}
     </div>
   );
 };
