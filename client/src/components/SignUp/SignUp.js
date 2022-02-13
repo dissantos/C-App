@@ -46,7 +46,7 @@ const SignUp = () => {
       })
       .then(resp => resp.json())
       .then(data => {
-      setUrl(data.url)
+        setUrl(data.url)
       })
       .catch(err => console.log(err))
     }
@@ -99,12 +99,11 @@ const SignUp = () => {
     const matricula = document.querySelector('#matricula-input').value;
     const ano = document.querySelector('#ano-input').value;
     const curso = document.querySelector('#curso-input').value;
-    console.log(coef)
     if(name && user && email && ano && curso && matricula  && values.password && values.confirmPassword && values.confirmPassword && !values.isIncorrectPassword) {
-      uploadImage();
+      await uploadImage();
       const cargaTot = cargaComp + cargaObg + cargaOpt;
       const perc = cargaTot/4380;
-
+      console.log(url);
       let res = await setUser(user, values.password, email, name, matricula, curso, ano, cargaOpt,cargaComp, cargaObg, coef, url);
       if(res === 'error') {
         setErrorSignup(true);
@@ -116,10 +115,20 @@ const SignUp = () => {
           curso: curso,
           email: email,
           ano_entrada: ano,
-          url: url
+          url: url,
+          id_topic: matricula,
+          id_msg: matricula,
+          carga_horaria_opt: cargaOpt,
+          carga_horaria_obrigat: cargaObg,
+          coeficiente: coef,
+          senha: values.password,
+          carga_horaria_compl: cargaComp,
+          carga_horaria_total: cargaTot,
+          percent_concluido: perc,
+          url: url? url : 'https://innostudio.de/fileuploader/images/default-avatar.png'
         }
-        localStorage.setItem('@C-app/login',prof);
-        window.location.href = '/principal';
+        localStorage.setItem('@C-app/login',JSON.stringify(prof));
+        //window.location.href = '/principal';
       }
    
     } else {

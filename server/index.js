@@ -10,6 +10,8 @@ const reqNoticia = require('./database/noticia')
 const dbAtividades = require('./database/atividades')
 const dbTopicos = require('./database/topico')
 const dbUserSignup = require('./database/newProfile')
+const dbUsers = require('./database/profiles');
+const dbUser = require('./database/user');
 
 
 app.use(require("cors")())
@@ -55,6 +57,14 @@ router
 router
   .route('/noticia')
   .post(reqNoticia.getNoticiaCefet)
+
+router
+  .route('/search')
+  .post(dbUsers.getUsers)
+
+router
+  .route('/profile')
+  .post(dbUser.getUser)
 
 app.listen(PORT, (err) => {
   if (err) {
