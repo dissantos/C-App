@@ -1,11 +1,11 @@
 import config from "../config.json";
 
 const func = config.baseURL + "home/atividades";
-export default async function get() {  
+export default async function get(matricula) {  
   let atividades = [];
   let myRequest = new Request(func);
   var body = {
-    matricula: '201612346789'
+    matricula: `${matricula}`
   }
   await fetch(myRequest, {
     method: "POST",
