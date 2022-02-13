@@ -64,3 +64,13 @@ cd client
 npm i
 npm start
 ```
+
+### Backend
+Para o Backend foi utilizado o [Node.js](https://nodejs.org/en/).
+Também foi criado o banco de dados na plataforma [Heroku](https://www.heroku.com/home) utilizando o [PostgreSQL](https://www.postgresql.org).
+Para executar o webserver entre na pasta do projeto e execute os seguintes comandos:
+```sh
+cd server
+npm i
+npx nodemon
+```
