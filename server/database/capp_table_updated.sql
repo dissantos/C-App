@@ -42,6 +42,7 @@ CREATE TABLE public."Mensagem"
     conteudo VARCHAR(200) NOT NULL,
     data VARCHAR(10) NOT NULL,
     id_topic VARCHAR(100) NOT NULL,
+    id_mensagem VARCHAR(100) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -52,17 +53,18 @@ CREATE TABLE public."Topico"
     mensagem VARCHAR(200) NOT NULL,
     categoria_topic VARCHAR(100) NOT NULL,
     nome_topic VARCHAR(100) NOT NULL,
+    id_topic_user VARCHAR(10) NOT NULL,
     PRIMARY KEY (id_topic)
 );
 
 ALTER TABLE public."Mensagem"
-    ADD FOREIGN KEY (id)
+    ADD FOREIGN KEY (id_mensagem)
     REFERENCES public."Aluno" (id_msg)
     NOT VALID;
 
 
 ALTER TABLE public."Topico"
-    ADD FOREIGN KEY (id_topic)
+    ADD FOREIGN KEY (id_topic_user)
     REFERENCES public."Aluno" (id_topic)
     NOT VALID;
 

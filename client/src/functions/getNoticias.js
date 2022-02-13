@@ -12,16 +12,13 @@ export default async function get() {
     },
   })
     .then((response) => {
-      console.log(response);
       if (response.status === 200) {
-        console.log("Entrou");
         return response.json();
       } else {
         return "error";
       }
     })
     .then((json) => {
-      console.log(json);
       todasAsNoticias = json;
     })
     .catch((error) => {

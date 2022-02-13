@@ -24,7 +24,6 @@ function getNoticiaCefet(req, res) {
           content: content
       }
       res.status(200).json(noticiaObj)
-      console.log(noticiaObj);
       return noticiaObj;
     })
     .catch(console.log('error'));
