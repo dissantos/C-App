@@ -69,7 +69,8 @@ const Profile = (props) => {
     ano_entrada: '',
     curso: '',
     url: '',
-    email: ''
+    email: '',
+    id_topic: ''
   });
   const [open, setOpen] = React.useState(false);
   const params = window.location.href.split("/");
@@ -96,6 +97,7 @@ const Profile = (props) => {
 
   useEffect(() => {
     const fetchProfile = async () => {
+      let id_topico = ''
       if(user !== 'profile') {
         let res = await getProfile(user);
         if(res === 'error'){
@@ -106,9 +108,10 @@ const Profile = (props) => {
           console.log(profile);
           console.log(res[0])
         }
+        id_topico = res[0].id_topic;
+      } else {
+        id_topico = profile.id_topic;
       }
-      const id_topico = profile.id_topic;
-
       let response = await getTopico(id_topico);
       console.log(response);
       let obj = [];
