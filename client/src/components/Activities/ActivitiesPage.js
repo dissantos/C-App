@@ -2,12 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./ActivitiesPage.css";
 import Calendar from "../Calendar/Calendar";
 import MonthCalendar from "../Calendar/MonthCalendar";
+import { Grid } from "@mui/material";
+import Paper from "@mui/material/Paper";
 import getAtividades from "../../functions/getAtividades";
+import { styled } from "@mui/material/styles";
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(2),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 const ActivitiesPage = () => {
   const [state, setState] = useState([]);
   const matricula = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
-      .matricula;
+    .matricula;
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -22,7 +32,6 @@ const ActivitiesPage = () => {
         obj.push(atividade);
       });
       setState(obj);
-      console.log(obj)
     };
     fetchNews();
   }, []);
@@ -31,15 +40,19 @@ const ActivitiesPage = () => {
     <div className="page">
       <div className="month-calendar">
         <MonthCalendar />
-        <span className="events">
-          {addEvent(state)}
-          <p className="event-title">Sistemas Distribuidos</p>
-          <p className="event-content">Novo vídeo cadastrado - dd/mm/aa</p>
-          <p className="event-title">Web</p>
-          <p className="event-content">Nova tarefa cadastrada - dd/mm/aa</p>
-          <p className="event-title">Inteligência Computacional</p>
-          <p className="event-content">Novo questionario - dd/mm/aa</p>
-        </span>
+        <div className="events">
+          {state.map((atividade, id) => {
+            console.log("Atividade: ", atividade);
+            return (
+              <>
+                <p className="event-title">{atividade.nome_disciplina}</p>
+                <p className="event-content">
+                  {atividade.nome_atividade} - {dateFormat(atividade.data)}
+                </p>
+              </>
+            );
+          })}
+        </div>
       </div>
       <div className="week-calendar">
         <p className="week-title">Atividades da Semana</p>
@@ -49,24 +62,13 @@ const ActivitiesPage = () => {
   );
 };
 
-function insertTaskOnPage(event) {
-  let calendarEl = document.querySelector("month-calendar");
-  let eventEl = document.querySelector("events");
-  let nome_disciplina = document.querySelector("event-content");
-  let nome_atividade = document.querySelector("event-title");
+const dateFormat = (date) => {
+  let datePart = date.match(/\d+/g);
+  let year = datePart[0].substring(2);
+  let month = datePart[1];
+  let day = datePart[2];
 
-  eventEl.classList.add("event-title");
-  nome_disciplina.innerHTML = `${event.nome_disciplina}`;
-
-  eventEl.classList.add("event-content");
-  nome_atividade.innerHTML = `${event.nome_atividade}`;
-
-  eventEl.appendChild(nome_disciplina, nome_atividade);
-  calendarEl.appendChild(eventEl);
-}
-
-function addEvent(state) {
-  console.log(state)
-}
+  return day + "/" + month + "/" + year;
+};
 
 export default ActivitiesPage;
