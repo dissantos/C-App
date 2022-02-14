@@ -1,11 +1,11 @@
 const bodyParser = require('body-parser')
 const dbConnection = require('./config/database')
 
-const getTopico = (req, resp) => {
+const getMensagem = (req, resp) => {
     const {
-        id_topic_user
+        id_topic
     } = req.body
-    const query = `SELECT id_topic, mensagem, categoria_topic, nome_topic,id_topic_user from public."Topico" where id_topic_user='${id_topic_user}';`
+    const query = `SELECT * from public."Mensagem" where id_topic='${id_topic}';`
     pool.query(query, (err, res) => {
         if (err) {
             console.log('Erro!!!')
@@ -14,6 +14,4 @@ const getTopico = (req, resp) => {
     })
 }
 
-
-
-module.exports = { getTopico }
+module.exports = { getMensagem }

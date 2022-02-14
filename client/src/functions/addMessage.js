@@ -1,12 +1,17 @@
 import config from "../config.json";
 
-const func = config.baseURL + "topicos";
-export default async function get(id_topico_user) {  
-  let topicos = [];
-  let myRequest = new Request(func);
+const func = config.baseURL + "mensagens/add";
+export default async function get(id, nome_autor, conteudo, data, id_topico, id_mensagem) {  
+  let mensagens = [];
   var body = {
-    id_topic_user: `${id_topico_user}`
+    id:  `${id}`,
+    nome_autor: `${nome_autor}`,
+    conteudo: `${conteudo}`,
+    data: `${data}`,
+    id_topic: `${id_topico}`,
+    id_mensagem: `${id_mensagem}`
   }
+  let myRequest = new Request(func);
   await fetch(myRequest, {
     method: "POST",
     body: JSON.stringify(body),
@@ -23,11 +28,11 @@ export default async function get(id_topico_user) {
       }
     })
     .then((json) => {
-        topicos = json;
+        mensagens = json;
     })
     .catch((error) => {
       console.error(error);
-      topicos = []
+      mensagens = []
     });
-  return topicos;
+  return mensagens;
 }

@@ -1,15 +1,11 @@
 import config from "../config.json";
 
-const func = config.baseURL + "topicos";
+const func = config.baseURL + "topicos/all";
 export default async function get(id_topico_user) {  
   let topicos = [];
   let myRequest = new Request(func);
-  var body = {
-    id_topic_user: `${id_topico_user}`
-  }
   await fetch(myRequest, {
     method: "POST",
-    body: JSON.stringify(body),
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",

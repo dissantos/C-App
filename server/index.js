@@ -10,11 +10,13 @@ const reqNoticia = require('./database/noticia')
 const dbAtividades = require('./database/atividades')
 const dbTopicos = require('./database/topico')
 const dbUserSignup = require('./database/newProfile')
+const dbMensagem = require('./database/mensagem')
+const dbTodosOsTopicos = require('./database/todosOsTopicos')
+const dbAddMensagem = require('./database/mensagemAdd')
 const dbUsers = require('./database/profiles');
 const dbUser = require('./database/user');
 const reqForgotPassword = require('./database/forgotPassword')
 const reqResetPassword = require('./database/resetPassword')
-
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -59,6 +61,18 @@ router
 router
   .route('/noticia')
   .post(reqNoticia.getNoticiaCefet)
+
+router
+  .route('/mensagens')
+  .post(dbMensagem.getMensagem)
+
+router
+  .route('/topicos/all')
+  .post(dbTodosOsTopicos.getTodosOsTopicos)
+  
+router
+  .route('/mensagens/add')
+  .post(dbAddMensagem.addMensagem)
 
 router
   .route('/search')
