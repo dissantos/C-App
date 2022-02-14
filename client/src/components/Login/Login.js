@@ -18,6 +18,7 @@ import DialogActions from "@mui/material/DialogActions";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import getUserData from "../../functions/getUserData";
+import getForgotPassword from "../../functions/getForgotPassword";
 
 const Login = () => {
   const [values, setValues] = React.useState({
@@ -84,6 +85,7 @@ const Login = () => {
         carga_horaria_compl: response[0].carga_horaria_compl,
         carga_horaria_total: response[0].carga_horaria_total,
         percent_concluido: response[0].percent_concluido,
+        url: response[0].url ? response[0].url : 'https://innostudio.de/fileuploader/images/default-avatar.png'
       });
 
       setSuccessAlert(true);
@@ -100,8 +102,12 @@ const Login = () => {
     }
   }, [successAlert]);
 
-  const handleCloseDialogRecovery = () => {
-    //TODO
+  const handleCloseDialogRecovery = async () => {
+    
+    const email = document.querySelector('#email-input').value;
+    let response = await getForgotPassword(email);
+    console.log(response);
+
     setOpenDialogRecovery(false);
   };
 
@@ -209,7 +215,7 @@ const Login = () => {
             redifinir a sua senha.
           </DialogContentText>
           <TextField
-            id="user-input"
+            id="email-input"
             type="email"
             label="E-mail"
             variant="outlined"

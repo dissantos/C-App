@@ -13,6 +13,10 @@ const dbUserSignup = require('./database/newProfile')
 const dbMensagem = require('./database/mensagem')
 const dbTodosOsTopicos = require('./database/todosOsTopicos')
 const dbAddMensagem = require('./database/mensagemAdd')
+const dbUsers = require('./database/profiles');
+const dbUser = require('./database/user');
+const reqForgotPassword = require('./database/forgotPassword')
+const reqResetPassword = require('./database/resetPassword')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -69,6 +73,22 @@ router
 router
   .route('/mensagens/add')
   .post(dbAddMensagem.addMensagem)
+
+router
+  .route('/search')
+  .post(dbUsers.getUsers)
+
+router
+  .route('/profile')
+  .post(dbUser.getUser)
+
+router
+  .route('/forgotPassword')
+  .post(reqForgotPassword.getForgotPassword)
+
+router
+  .route('/resetPassword')
+  .post(reqResetPassword.getResetPassword)
 
 app.listen(PORT, (err) => {
   if (err) {

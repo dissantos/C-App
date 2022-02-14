@@ -1,12 +1,12 @@
 import config from "../config.json";
 
-const func = config.baseURL + "home/atividades";
-export default async function get(matricula) {  
-  let atividades = [];
-  let myRequest = new Request(func);
+const func = config.baseURL + "search";
+export default async function get(search) {
   var body = {
-    matricula: `${matricula}`
-  }
+    search
+  };
+  let users = '';
+  let myRequest = new Request(func);
   await fetch(myRequest, {
     method: "POST",
     body: JSON.stringify(body),
@@ -23,11 +23,10 @@ export default async function get(matricula) {
       }
     })
     .then((json) => {
-        atividades = json;
+      users = json;
     })
     .catch((error) => {
-      console.error(error);
-      atividades = []
+      users = false;
     });
-  return atividades;
+  return users;
 }

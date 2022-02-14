@@ -48,7 +48,7 @@ function Header() {
                   window.localStorage.getItem('@C-app/login') ?
                     (
                       <>
-                        <span className="name">{JSON.parse(window.localStorage.getItem('@C-app/login'))[0].nome}</span>
+                        <span className="name">{JSON.parse(window.localStorage.getItem('@C-app/login')).nome}</span>
                         <IconButton href="/profile">
                           <SvgIcon className="material-icons">
                             <MdAccountCircle />

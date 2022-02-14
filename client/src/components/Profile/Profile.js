@@ -19,6 +19,8 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import getTopico from "../../functions/getTopico";
+import Avatar from '@mui/material/Avatar';
+import getProfile from '../../functions/getProfile';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -60,8 +62,7 @@ BootstrapDialogTitle.propTypes = {
 
 const Profile = (props) => {
   const [state, setState] = useState([]);
-  const [test, setTest] = useState("");
-
+  const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('@C-app/login')));
   const [open, setOpen] = React.useState(false);
   const params = window.location.href.split("/");
   const user = params[params.length - 1];
@@ -86,11 +87,20 @@ const Profile = (props) => {
   };
 
   useEffect(() => {
-    const fetchTopico = async () => {
-      const id_topico = JSON.parse(
-        window.localStorage.getItem("@C-app/login")
-      )[0].id_topic;
-      console.log(id_topico);
+    const fetchProfile = async () => {
+      if(user !== 'profile') {
+        let res = await getProfile(user);
+        if(res === 'error'){
+          window.location.href = '/profile'
+          console.log('Erro: Matricula inexistente no Banco de Dados');
+        } else {
+          setProfile(res[0]);
+          console.log(profile);
+          console.log(res[0])
+        }
+      }
+      const id_topico = profile.id_topic;
+
       let response = await getTopico(id_topico);
       console.log(response);
       let obj = [];
@@ -104,19 +114,10 @@ const Profile = (props) => {
         };
         obj.push(JSON.stringify(topico));
       });
-      setTest("teste1");
       setState(obj);
     };
-    fetchTopico();
+    fetchProfile();
   }, []);
-
-  function UserIcon(props) {
-    return (
-      <SvgIcon {...props}>
-        <AccountCircleIcon></AccountCircleIcon>
-      </SvgIcon>
-    );
-  }
 
   return (
     <div className="Profile">
@@ -131,7 +132,7 @@ const Profile = (props) => {
                 },
               }}
             >
-              <UserIcon sx={{ fontSize: 150 }} />
+              <Avatar src={profile.url} sx={{width: '15rem', height: '15rem'}}/>
             </Box>
           </Grid>
           <Grid item xs={6}>
@@ -146,10 +147,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Nome"
-                defaultValue={
-                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
-                    .nome
-                }
+                value={profile.nome}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -157,10 +155,7 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Nome completo"
-                defaultValue={
-                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
-                    .nome_completo
-                }
+                value={profile.nome_completo}
                 InputProps={{
                   readOnly: true,
                 }}
@@ -168,8 +163,8 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Matrícula"
-                defaultValue={
-                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                value={
+                  profile
                     .matricula
                 }
                 InputProps={{
@@ -179,8 +174,8 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Curso"
-                defaultValue={
-                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                value={
+                  profile
                     .curso
                 }
                 InputProps={{
@@ -190,8 +185,8 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="E-mail"
-                defaultValue={
-                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                value={
+                  profile
                     .email
                 }
                 InputProps={{
@@ -201,8 +196,8 @@ const Profile = (props) => {
               <TextField
                 id="outlined-read-only-input"
                 label="Ano de entrada"
-                defaultValue={
-                  JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                value={
+                  profile
                     .ano_entrada
                 }
                 InputProps={{
