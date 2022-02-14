@@ -49,7 +49,9 @@ class DadosAcademicos extends React.Component {
       <>
         <div className="DadosAcademicos">
           <h4>Dados Acadêmicos</h4>
-          <div className="progresso">Coeficiente: {`${this.state.coeficiente}`}</div>
+          <div className="progresso">
+            Coeficiente: {`${this.state.coeficiente}`}
+          </div>
 
           <div className="progresso">
             Progresso Total
