@@ -25,7 +25,7 @@ let eventsList = [
 
 class SuasAtividades extends React.Component {
   async componentDidMount() {
-    const matricula = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+    const matricula = JSON.parse(window.localStorage.getItem("@C-app/login"))
       .matricula;
 
     let res = await getAtividades(matricula);

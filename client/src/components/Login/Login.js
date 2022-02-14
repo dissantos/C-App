@@ -89,7 +89,7 @@ const Login = () => {
       });
 
       setSuccessAlert(true);
-      window.localStorage.setItem("@C-app/login", JSON.stringify(response));
+      window.localStorage.setItem("@C-app/login", JSON.stringify(response[0]));
     } else {
       setErrorAlert(true);
     }

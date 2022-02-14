@@ -38,7 +38,7 @@ const Room = () => {
     ).value;
     let id = tamanho + 1;
     console.log(tamanho);
-    let nome_autor = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+    let nome_autor = JSON.parse(window.localStorage.getItem("@C-app/login"))
       .nome_completo;
     let conteudo = novaMensagem;
     let today = new Date();
@@ -50,7 +50,7 @@ const Room = () => {
     let seg = today.getSeconds();
     let data = `${ano}-${mes}-${day}T${hora}:${min}:${seg}`;
     let id_topico = id_topic;
-    let id_mensagem = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+    let id_mensagem = JSON.parse(window.localStorage.getItem("@C-app/login"))
       .id_msg;
     if (novaMensagem) {
       let response = await addMensagens(
@@ -82,7 +82,7 @@ const Room = () => {
     setMensagem1(mensagem);
     console.log(new Date());
     let aux =
-      JSON.parse(window.localStorage.getItem("@C-app/login"))[0].id_topic ==
+      JSON.parse(window.localStorage.getItem("@C-app/login")).id_topic ==
       id_topic_user
         ? "message logged"
         : "message";
@@ -177,7 +177,7 @@ const Room = () => {
               console.log(mensagemToda);
               let aux =
                 mensagemToda.id_mensagem ==
-                JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                JSON.parse(window.localStorage.getItem("@C-app/login"))
                   .id_msg
                   ? "message logged"
                   : "message";

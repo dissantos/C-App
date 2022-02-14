@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const ActivitiesPage = () => {
   const [state, setState] = useState([]);
-  const matricula = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+  const matricula = JSON.parse(window.localStorage.getItem("@C-app/login"))
     .matricula;
 
   useEffect(() => {
