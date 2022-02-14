@@ -45,7 +45,7 @@ p.logged {
 
 .send-message {
   position: absolute;
-  bottom: -5%;
+  bottom: -5rem;
   width: 50%;
   padding-right: 60px;
 }

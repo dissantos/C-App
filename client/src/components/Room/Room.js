@@ -11,6 +11,8 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import getMensagens from "../../functions/getMensagens";
 import { TextField } from "@material-ui/core";
+import Button from "@mui/material/Button";
+import addMensagens from "../../functions/addMessage";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -27,7 +29,44 @@ const Room = () => {
   const [mensagem1, setMensagem1] = React.useState("");
   const [id_topic_user, setIdTopicUser] = React.useState("");
   const [id_topic, setIdTopic] = React.useState("");
+  const [tamanho, setTamanho] = React.useState(0);
   const [mensagemPrincipalCor, setmensagemPrincipalCor] = React.useState("");
+
+  const handleNewMessage = async () => {
+    let novaMensagem = document.querySelector(
+      "#demo-helper-text-aligned"
+    ).value;
+    let id = tamanho + 1;
+    console.log(tamanho);
+    let nome_autor = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+      .nome_completo;
+    let conteudo = novaMensagem;
+    let today = new Date();
+    let day = today.getDate();
+    let mes = today.getMonth() + 1;
+    let ano = today.getFullYear();
+    let hora = today.getHours();
+    let min = today.getMinutes();
+    let seg = today.getSeconds();
+    let data = `${ano}-${mes}-${day}T${hora}:${min}:${seg}`;
+    let id_topico = id_topic;
+    let id_mensagem = JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+      .id_msg;
+    if (novaMensagem) {
+      let response = await addMensagens(
+        id,
+        nome_autor,
+        conteudo,
+        data,
+        id_topico,
+        id_mensagem
+      );
+    }
+    let limpa = document.querySelector("#demo-helper-text-aligned");
+    limpa.value='';
+    window.location.reload();
+  };
+
   const handleListItemClick = (
     event,
     index,
@@ -41,6 +80,7 @@ const Room = () => {
     setIdTopic(id_topic);
     setIdTopicUser(id_topic_user);
     setMensagem1(mensagem);
+    console.log(new Date());
     let aux =
       JSON.parse(window.localStorage.getItem("@C-app/login"))[0].id_topic ==
       id_topic_user
@@ -66,6 +106,7 @@ const Room = () => {
       });
       console.log(obj);
       setMensagemCompleta(obj);
+      setTamanho(obj.length);
     };
     fetchMensagens();
   };
@@ -129,13 +170,15 @@ const Room = () => {
             <Messages
               selected={selectedIndex === 2}
               mensagem={mensagem1}
-              cor={ mensagemPrincipalCor }
+              cor={mensagemPrincipalCor}
             ></Messages>
 
             {mensagemCompleta.map((mensagemToda, id) => {
               console.log(mensagemToda);
               let aux =
-                mensagemToda.id_mensagem == JSON.parse(window.localStorage.getItem("@C-app/login"))[0].id_msg
+                mensagemToda.id_mensagem ==
+                JSON.parse(window.localStorage.getItem("@C-app/login"))[0]
+                  .id_msg
                   ? "message logged"
                   : "message";
 
@@ -150,13 +193,16 @@ const Room = () => {
             })}
             <div className="category javascript"></div>
             <div className="send-message">
-        <TextField
-          fullWidth
-          helperText=""
-          id="demo-helper-text-aligned"
-          label="Digite uma mensagem"
-        />
-      </div>
+              <TextField
+                fullWidth
+                helperText=""
+                id="demo-helper-text-aligned"
+                label="Digite uma mensagem"
+              />
+              <Button variant="contained" onClick={handleNewMessage}>
+                Enviar
+              </Button>
+            </div>
           </Item>
         </Grid>
       </Grid>

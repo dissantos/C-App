@@ -12,6 +12,7 @@ const dbTopicos = require('./database/topico')
 const dbUserSignup = require('./database/newProfile')
 const dbMensagem = require('./database/mensagem')
 const dbTodosOsTopicos = require('./database/todosOsTopicos')
+const dbAddMensagem = require('./database/mensagemAdd')
 
 app.use(require("cors")())
 app.use(bodyParser.json())
@@ -64,6 +65,10 @@ router
 router
   .route('/topicos/all')
   .post(dbTodosOsTopicos.getTodosOsTopicos)
+  
+router
+  .route('/mensagens/add')
+  .post(dbAddMensagem.addMensagem)
 
 app.listen(PORT, (err) => {
   if (err) {
