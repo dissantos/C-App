@@ -62,7 +62,15 @@ BootstrapDialogTitle.propTypes = {
 
 const Profile = (props) => {
   const [state, setState] = useState([]);
-  const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('@C-app/login')));
+  const [profile, setProfile] = useState(localStorage.getItem('@C-app/login')? JSON.parse(localStorage.getItem('@C-app/login')) : {
+    nome: '',
+    nome_completo: '',
+    matricula: '',
+    ano_entrada: '',
+    curso: '',
+    url: '',
+    email: ''
+  });
   const [open, setOpen] = React.useState(false);
   const params = window.location.href.split("/");
   const user = params[params.length - 1];
