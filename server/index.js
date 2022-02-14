@@ -12,6 +12,8 @@ const dbTopicos = require('./database/topico')
 const dbUserSignup = require('./database/newProfile')
 const dbUsers = require('./database/profiles');
 const dbUser = require('./database/user');
+const reqForgotPassword = require('./database/forgotPassword')
+const reqResetPassword = require('./database/resetPassword')
 
 
 app.use(require("cors")())
@@ -65,6 +67,14 @@ router
 router
   .route('/profile')
   .post(dbUser.getUser)
+
+router
+  .route('/forgotPassword')
+  .post(reqForgotPassword.getForgotPassword)
+
+router
+  .route('/resetPassword')
+  .post(reqResetPassword.getResetPassword)
 
 app.listen(PORT, (err) => {
   if (err) {

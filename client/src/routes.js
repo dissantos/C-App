@@ -11,6 +11,7 @@ import Search from './components/Search/Search';
 import Button from "@mui/material/Button";
 import Forum from "./components/Forum/ForumPage";
 import ActivitiesPage from "./components/Activities/ActivitiesPage"
+import ResetPassword from "./components/ResetPassword/ResetPassword";
 
 
 const Router = () => {
@@ -42,6 +43,7 @@ const Router = () => {
         <Route path="/profile" element={localStorage.getItem('@C-app/login') ? <Profile user={null}/> : accessDenied}/>
         <Route path="/profile/:user" element={<Profile/>}/>
         <Route path="/principal" element={localStorage.getItem('@C-app/login') ? <Home/> : accessDenied}/>
+        <Route path='/resetPassword/:token' element={<ResetPassword/>}/>
       </Routes>
     </BrowserRouter>
   )

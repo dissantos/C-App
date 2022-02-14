@@ -21,7 +21,7 @@ const setUser = (req, resp) => {
     INSERT INTO public."Aluno"(nome,nome_completo,email, matricula, curso, ano_entrada, id_topic, id_msg, carga_horaria_opt, carga_horaria_compl, carga_horaria_obrigat, carga_horaria_total, percent_concluido,coeficiente,senha, url) 
     VALUES ('${user}','${name}','${email}','${matricula}','${curso}','${ano}','${matricula}','${matricula}','${carga_horaria_opt}','${carga_horaria_comp}','${carga_horaria_obg}','${(carga_horaria_obg + carga_horaria_comp + carga_horaria_opt)}','${perc}','${coef}','${password}', '${url}');
     `
-    const querySelect = `SELECT * FROM public."Aluno" a where nome='${user}' or matricula='${matricula}';`
+    const querySelect = `SELECT * FROM public."Aluno" a where nome='${user}' or matricula='${matricula}' or email='${email}';`
     pool.query(querySelect, (err, res) => {
         if (err) {
             console.log('Erro!!!')

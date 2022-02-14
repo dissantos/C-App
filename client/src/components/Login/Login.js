@@ -18,6 +18,7 @@ import DialogActions from "@mui/material/DialogActions";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import getUserData from "../../functions/getUserData";
+import getForgotPassword from "../../functions/getForgotPassword";
 
 const Login = () => {
   const [values, setValues] = React.useState({
@@ -101,8 +102,12 @@ const Login = () => {
     }
   }, [successAlert]);
 
-  const handleCloseDialogRecovery = () => {
-    //TODO
+  const handleCloseDialogRecovery = async () => {
+    
+    const email = document.querySelector('#email-input').value;
+    let response = await getForgotPassword(email);
+    console.log(response);
+
     setOpenDialogRecovery(false);
   };
 
@@ -210,7 +215,7 @@ const Login = () => {
             redifinir a sua senha.
           </DialogContentText>
           <TextField
-            id="user-input"
+            id="email-input"
             type="email"
             label="E-mail"
             variant="outlined"
