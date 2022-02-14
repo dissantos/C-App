@@ -36,8 +36,9 @@ const Room = () => {
     let novaMensagem = document.querySelector(
       "#demo-helper-text-aligned"
     ).value;
-    let id = tamanho + 1;
+    let id = tamanho + new Date().getTime();
     console.log(tamanho);
+    setTamanho(id);
     let nome_autor = JSON.parse(window.localStorage.getItem("@C-app/login"))
       .nome_completo;
     let conteudo = novaMensagem;
